@@ -106,3 +106,9 @@ refer: https://blog.csdn.net/qq_15437667/article/details/51029757
 name=用户名
 email=用户邮箱
 ```
+3. 修改 .git/conf 文件,保证不需要每次都输入username,修改url的部分
+```
+    [remote "origin"]
+    url = git@github.com:humingx/humingx.github.io.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+```
