@@ -7,6 +7,8 @@
   - [relate local git repository to remote repository](#relate-local-git-repository-to-remote-repository)
   - [gitignore 文件 编写方法](#gitignore-%E6%96%87%E4%BB%B6-%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95)
   - [在git conf 中配置username](#%E5%9C%A8git-conf-%E4%B8%AD%E9%85%8D%E7%BD%AEusername)
+  - [git 中删除文件](#git-%E4%B8%AD%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6)
+  - [不小心误删除](#%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%AF%AF%E5%88%A0%E9%99%A4)
 
 <!-- /TOC -->
 
@@ -111,4 +113,16 @@ email=用户邮箱
     [remote "origin"]
     url = git@github.com:humingx/humingx.github.io.git
     fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+## git 中删除文件
+在git中删除, 只删除文件在git记录，不删除文件
+```git
+git rm --local  filename
+```
+
+## 不小心误删除
+只要git 里面有记录可以， 如下可以还原test.txt文件
+```
+git checkout -- test.txt
 ```
