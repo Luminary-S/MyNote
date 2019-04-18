@@ -1,5 +1,18 @@
 # Solution for different Ubuntu Problems
+<!-- TOC -->
 
+- [Solution for different Ubuntu Problems](#solution-for-different-ubuntu-problems)
+  - [clean Ubuntu core](#clean-ubuntu-core)
+  - [clean apt-get lock](#clean-apt-get-lock)
+    - [解决dpkg/apt-get error : 子进程 post-installation script 返回了错误号 1](#%E8%A7%A3%E5%86%B3dpkgapt-get-error--%E5%AD%90%E8%BF%9B%E7%A8%8B-post-installation-script-%E8%BF%94%E5%9B%9E%E4%BA%86%E9%94%99%E8%AF%AF%E5%8F%B7-1)
+  - [“下载额外数据文件失败 ttf-mscorefonts-installer”的问题](#%E4%B8%8B%E8%BD%BD%E9%A2%9D%E5%A4%96%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E5%A4%B1%E8%B4%A5-ttf-mscorefonts-installer%E7%9A%84%E9%97%AE%E9%A2%98)
+  - [dpkg: 处理软件包 xxx (--configure)时出错：](#dpkg-%E5%A4%84%E7%90%86%E8%BD%AF%E4%BB%B6%E5%8C%85-xxx---configure%E6%97%B6%E5%87%BA%E9%94%99)
+  - [sudo apt-get -f install 出现 gzip: stdout: No space left on device](#sudo-apt-get--f-install-%E5%87%BA%E7%8E%B0-gzip-stdout-no-space-left-on-device)
+  - [possible missing firmware](#possible-missing-firmware)
+  - [USB device not found](#usb-device-not-found)
+  - [Failed to restart network.service: Unit network.service failed to load: No such file or directory. OR 重启网卡提示:/org/freedesktop/NetworkManager/ActiveConnection/(n)](#failed-to-restart-networkservice-unit-networkservice-failed-to-load-no-such-file-or-directory-or-%E9%87%8D%E5%90%AF%E7%BD%91%E5%8D%A1%E6%8F%90%E7%A4%BAorgfreedesktopnetworkmanageractiveconnectionn)
+
+<!-- /TOC -->
 ## clean Ubuntu core
 ```
 dpkg --list|grep linux-image
