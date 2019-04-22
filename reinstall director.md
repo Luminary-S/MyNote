@@ -148,7 +148,7 @@
    rosrun turtlesim turtle_teleop_key
    1) 打开新的Termial，输入以下命令，弹出新的窗口查看ROS节点信息：rosrun rqt_graph rqt_graph
 6. compile, catkin_make
-    + sudo apt-get install ros-kinetic-(moveit, visp, urdfdom-py, ros-control)
+    + sudo apt-get install ros-kinetic-moveit ros-kinetic-visp ros-kinetic-urdfdom-py ros-kinetic-ros-control ros-kinetic-ros-type-introspection
 
 ### **Qt**
 1. refer: qt official website [install kinetic](https://wiki.qt.io/Install_Qt_5_on_Ubuntu) and [install blog](https://blog.csdn.net/wuweifeng_2017/article/details/78322249) and [configuration](https://www.helplib.com/ubuntu/article_170121) 
