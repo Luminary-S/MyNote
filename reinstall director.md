@@ -151,7 +151,7 @@
     + sudo apt-get install ros-kinetic-moveit ros-kinetic-visp ros-kinetic-urdfdom-py ros-kinetic-ros-control ros-kinetic-ros-type-introspection
 
 ### **Qt**
-1. refer: qt official website [install kinetic](https://wiki.qt.io/Install_Qt_5_on_Ubuntu) and [install blog](https://blog.csdn.net/wuweifeng_2017/article/details/78322249) and [configuration](https://www.helplib.com/ubuntu/article_170121) 
+1. refer: qt official website [install qt](https://wiki.qt.io/Install_Qt_5_on_Ubuntu) and [install blog](https://blog.csdn.net/wuweifeng_2017/article/details/78322249) and [configuration](https://www.helplib.com/ubuntu/article_170121) 
 2. download link: [qt](http://download.qt.io/official_releases/qt/) 
 3. path configuration
    1) 在命令端口中输入命令：sudo vim /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf  打开default.conf文件。
