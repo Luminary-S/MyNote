@@ -10,6 +10,7 @@
     - [opencv2 video stream into QLabel](#opencv2-video-stream-into-qlabel)
   - [pyserial in python2 and python3](#pyserial-in-python2-and-python3)
   - [QlineEdit](#qlineedit)
+    - [classobj class inherit](#classobj-class-inherit)
 
 <!-- /TOC -->
 
@@ -124,4 +125,16 @@ QLineEdit::PasswordEchoOnEdit	3	Display characters as they are entered while edi
 textEdt->setPlainText("12345\nabcdef");
 	QString str;
 	str = textEdt->toPlainText();
+```
+
+### classobj class inherit
+1. should define object in the father class
+```python 
+class father(object):
+    def __init__(self):
+        pass
+
+class son(father):
+    def __init__(self, name):
+        super(son,self).__init__()
 ```
