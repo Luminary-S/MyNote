@@ -1,3 +1,5 @@
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
 <!-- TOC -->
 
 - [多车同步运动 *位置控制* 公式（这里只写两个）](#多车同步运动-位置控制-公式这里只写两个)
@@ -19,6 +21,7 @@
 
 <!-- /TOC -->
 
+
 # 多车同步运动 *位置控制* 公式（这里只写两个）
 位置控制 指的是 只控制车的位置。输入的数据是CAN通信传回的**位置**信息，不利用车的速度信息。返回的是车的目标位置信息。
 位置是通过编码器的计算得到的，编码器和爬绳车（RCR） 的转换关系为：
@@ -36,7 +39,7 @@ $$ \eta = \frac{\phi_{encoder}*\theta_{gear}}{S_{chain}*n} $$
 
 ## 相关定义
 定义： 左边车为 1 号车； 右边车位2号车
-
+p
 1号车 同步的位置误差：
 $$ \phi_1 = h_1 - h_2  $$
 1号车 运动位置误差：
