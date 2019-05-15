@@ -1,18 +1,18 @@
-# git use roadmap 
+# 1. git use roadmap 
 <!-- TOC -->
 
-- [git use roadmap](#git-use-roadmap)
-  - [git daily ops, update remote repository](#git-daily-ops-update-remote-repository)
-  - [git-ssh 配置](#git-ssh-%E9%85%8D%E7%BD%AE)
-  - [relate local git repository to remote repository](#relate-local-git-repository-to-remote-repository)
-  - [gitignore 文件 编写方法](#gitignore-%E6%96%87%E4%BB%B6-%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95)
-  - [在git conf 中配置username](#%E5%9C%A8git-conf-%E4%B8%AD%E9%85%8D%E7%BD%AEusername)
-  - [git 中删除文件](#git-%E4%B8%AD%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6)
-  - [不小心误删除](#%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%AF%AF%E5%88%A0%E9%99%A4)
+- [1. git use roadmap](#1-git-use-roadmap)
+  - [1.1. git daily ops, update remote repository](#11-git-daily-ops-update-remote-repository)
+  - [1.2. git-ssh 配置](#12-git-ssh-%E9%85%8D%E7%BD%AE)
+  - [1.3. relate local git repository to remote repository](#13-relate-local-git-repository-to-remote-repository)
+  - [1.4. gitignore 文件 编写方法](#14-gitignore-%E6%96%87%E4%BB%B6-%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95)
+  - [1.5. 在git conf 中配置username](#15-%E5%9C%A8git-conf-%E4%B8%AD%E9%85%8D%E7%BD%AEusername)
+  - [1.6. git 中删除文件](#16-git-%E4%B8%AD%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6)
+  - [1.7. 不小心误删除](#17-%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%AF%AF%E5%88%A0%E9%99%A4)
 
 <!-- /TOC -->
 
-## git daily ops, update remote repository
+## 1.1. git daily ops, update remote repository
 1. check code status
 ```
 git status
@@ -33,7 +33,7 @@ git pull
 ``` 
 git push origin master 
 ```
-## git-ssh 配置
+## 1.2. git-ssh 配置
 refer: https://segmentfault.com/a/1190000002645623
 1. 设置Git的user name和email：
 ```
@@ -57,7 +57,7 @@ ssh -T git@github.com
 6. 后面就可以进行 [git daily ops, update remote repository](#git-daily-ops-update-remote-repository)
 
 
-## relate local git repository to remote repository
+## 1.3. relate local git repository to remote repository
    refer: [上传本地代码及更新代码到github教程](https://www.cnblogs.com/zlxbky/p/7727895.html)
 1. go to github website, login in and create remote Repository, sample name is : MyNote, then your repository link should be: 
    https://github.com/Luminary-S/MyNote.git
@@ -73,7 +73,7 @@ ssh -T git@github.com
 
 
 
-## gitignore 文件 编写方法
+## 1.4. gitignore 文件 编写方法
 refer: [Git ignore文件的设置](https://www.jianshu.com/p/267cd94f1d49)
 ```
 # 以#开头的行都是注释
@@ -99,7 +99,7 @@ somepath
 /somepath
 ``` 
 
-## 在git conf 中配置username
+## 1.5. 在git conf 中配置username
 refer: https://blog.csdn.net/qq_15437667/article/details/51029757
 1. 全局的conf 在 ～/.gitconfig, local repository 的在相应的文件夹下的 ./.git/conf 文件中
 2. 添加的内容
@@ -115,13 +115,13 @@ email=用户邮箱
     fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
-## git 中删除文件
+## 1.6. git 中删除文件
 在git中删除, 只删除文件在git记录，不删除文件
 ```git
 git rm --local  filename
 ```
 
-## 不小心误删除
+## 1.7. 不小心误删除
 只要git 里面有记录可以， 如下可以还原test.txt文件
 ```
 git checkout -- test.txt
