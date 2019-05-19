@@ -9,6 +9,9 @@
   - [1.5. 在git conf 中配置username](#15-%E5%9C%A8git-conf-%E4%B8%AD%E9%85%8D%E7%BD%AEusername)
   - [1.6. git 中删除文件](#16-git-%E4%B8%AD%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6)
   - [1.7. 不小心误删除](#17-%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%AF%AF%E5%88%A0%E9%99%A4)
+  - [1.8. git tag](#18-git-tag)
+    - [1.8.1. 创建tag](#181-%E5%88%9B%E5%BB%BAtag)
+    - [1.8.2. 查看tag](#182-%E6%9F%A5%E7%9C%8Btag)
 
 <!-- /TOC -->
 
@@ -126,3 +129,36 @@ git rm --local  filename
 ```
 git checkout -- test.txt
 ```
+
+## 1.8. git tag
+refer: [git tag 用法](https://www.cnblogs.com/senlinyang/p/8527764.html)
+### 1.8.1. 创建tag
+```
+git tag -a V1.2 -m 'release 1.2'
+```
+上面的命令我们成功创建了本地一个版本 V1.2 ,并且添加了附注信息 'release 1.2'
+### 1.8.2. 查看tag
+```
+git tag
+```
+要显示附注信息,我们需要用 show 指令来查看
+```
+git show V1.2
+```
+但是目前这个标签仅仅是提交到了本地git仓库.如何同步到远程代码库
+```
+git push origin --tags
+```
+如果刚刚同步上去,你缺发现一个致命bug ,需要重新打版本,现在还为时不晚.
+```
+git tag -d V1.2
+```
+到这一步我们只是删除了本地 V1.2的版本,可是线上V1.2的版本还是存在,如何办?这时我们可以推送的空的同名版本到线下,达到删除线上版本的目标:
+```
+git push origin :refs/tags/V1.2
+```
+如何获取远程版本?
+```
+git fetch origin tag V1.2
+```
+这样我们可以精准拉取指定的某一个版本.适用于运维同学部署指定版本.
