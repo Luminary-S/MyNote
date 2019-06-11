@@ -10,3 +10,6 @@
 
 # Vrep
 1. usage refer: [Vrep机器人动力学建模仿真](https://zhuanlan.zhihu.com/c_156026799)
+
+# openRAVE
+refer: [Getting started with OpenRAVE](https://scaron.info/teaching/getting-started-with-openrave.html)
