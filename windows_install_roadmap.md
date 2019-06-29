@@ -10,8 +10,8 @@ refer：[LaTeX (MikTeX+TeXstudio) 在win10上的配置教程](https://blog.csdn.
 1. 下载[TeXstudio](http://texstudio.sourceforge.net/)
   * [texstuido usermanual](http://texstudio.sourceforge.net/manual/current/usermanual_en.html)
 2. 安装[MikTeX](https://miktex.org/howto/install-miktex)
-
-```test.tex
+3. test: test.tex
+```
 \documentclass{article} 
     \title{A Test for TeXstudio} 
     \author{Dale无双} 
