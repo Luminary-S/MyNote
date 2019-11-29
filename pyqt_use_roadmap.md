@@ -1,20 +1,20 @@
-# pyqt use roadmap
+# 1. pyqt use roadmap
 <!-- TOC -->
 
-- [pyqt use roadmap](#pyqt-use-roadmap)
-  - [insert *pictures, gif, video* in the QLabel](#insert-pictures-gif-video-in-the-qlabel)
-    - [style setting](#style-setting)
-    - [insert txt， use htmlcss](#insert-txt-use-htmlcss)
-    - [insert *pic*](#insert-pic)
-    - [insert video](#insert-video)
-    - [opencv2 video stream into QLabel](#opencv2-video-stream-into-qlabel)
-  - [pyserial in python2 and python3](#pyserial-in-python2-and-python3)
-  - [QlineEdit](#qlineedit)
-    - [classobj class inherit](#classobj-class-inherit)
+- [1. pyqt use roadmap](#1-pyqt-use-roadmap)
+  - [1.1. insert *pictures, gif, video* in the QLabel](#11-insert-pictures-gif-video-in-the-qlabel)
+    - [1.1.1. style setting](#111-style-setting)
+    - [1.1.2. insert txt， use htmlcss](#112-insert-txt-use-htmlcss)
+    - [1.1.3. insert *pic*](#113-insert-pic)
+    - [1.1.4. insert video](#114-insert-video)
+    - [1.1.5. opencv2 video stream into QLabel](#115-opencv2-video-stream-into-qlabel)
+  - [1.2. pyserial in python2 and python3](#12-pyserial-in-python2-and-python3)
+  - [1.3. QlineEdit](#13-qlineedit)
+    - [1.3.1. classobj class inherit](#131-classobj-class-inherit)
 
 <!-- /TOC -->
 
-## insert *pictures, gif, video* in the QLabel
+## 1.1. insert *pictures, gif, video* in the QLabel
     refer: https://zhuanlan.zhihu.com/p/32134728
 In QLabel, you can insert:
 
@@ -25,7 +25,7 @@ In QLabel, you can insert:
 | movie,gif | setMovie()  |
 |数字|setNum()|
 
-### style setting
+### 1.1.1. style setting
 ```python
 lb3.setWordWrap(True)  # 自动换行
 lb1.setAlignment(Qt.AlignVCenter | Qt.AlignRight) #对齐方式
@@ -37,7 +37,7 @@ lb1.setStyleSheet("border: 2px solid red")
 lb.setAlignment(Qt.AlignBottom | Qt.AlignRight) # should import from PyQt5.QtCore import Qt
 ```
 
-### insert txt， use htmlcss
+### 1.1.2. insert txt， use htmlcss
 ```python
         lb = QLabel(self)
 
@@ -56,14 +56,14 @@ lb.setAlignment(Qt.AlignBottom | Qt.AlignRight) # should import from PyQt5.QtCor
         lb.setText(html)
 ```
 
-### insert *pic*
+### 1.1.3. insert *pic*
 
 ```python
 cuhk_pix = QPixmap('img/cuhk.png') #need to create a QPixmap
 icon_cuhk_label.setPixmap(cuhk_pix)
 ```
 
-### insert video
+### 1.1.4. insert video
 ```python
         movie = QMovie("movie.gif")
         self.lb.setMovie(movsie)
@@ -74,7 +74,7 @@ icon_cuhk_label.setPixmap(cuhk_pix)
             self.lb.setPixmap(self.pix)
 ```
 
-### opencv2 video stream into QLabel
+### 1.1.5. opencv2 video stream into QLabel
 refer: https://blog.csdn.net/ccchen706/article/details/71425653 
 1. should transfer cv BGR to RGB 
 2. still create a QImage
@@ -86,12 +86,12 @@ self._image = QtGui.QImage(img2,img2.shape[1], img2.shape[0],img2.shape[1] * 3, 
 
 
 
-## pyserial in python2 and python3
+## 1.2. pyserial in python2 and python3
 refer: https://blog.csdn.net/weixin_38685248/article/details/71356712
 1. python3.5的write函数要encode，pyhon2.7不用
 2. python2.7如果要连接虚拟串口，要加rtscts=True,dsrdtr=True 
 
-## QlineEdit
+## 1.3. QlineEdit
 1. set focus or no focus, make the lineEdit human avialable or not. not available:```focusPolicy: no focus ```
 2. set placeholderText to set the default show txt in the box
 3. get text and set text：
@@ -127,7 +127,7 @@ textEdt->setPlainText("12345\nabcdef");
 	str = textEdt->toPlainText();
 ```
 
-### classobj class inherit
+### 1.3.1. classobj class inherit
 1. should define object in the father class
 ```python 
 class father(object):

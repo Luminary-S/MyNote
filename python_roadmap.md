@@ -22,3 +22,5 @@ bool  | ?  | 存储true和false值的布尔类型
 obiect  | O  | python对象类型
 string  | S  | 固定长度的字符串类型（每个字符1个字节）
 unicode  | U  | 固定长度的uincode类型（字数由平台决定）跟字符创的定义方式一样（如U10）
+
+# 使用非 用 not 不要用 ～

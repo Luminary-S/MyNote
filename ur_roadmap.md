@@ -8,3 +8,6 @@ refer:[UR机器人之一：坐标系及位姿表示方法 - 行者无疆的博�
 
 # urscript function
 refer:[URScript编程语言](https://wenku.baidu.com/view/58adfe7dbdd126fff705cc1755270722192e59d0.html)
+
+# robot arm path planning-- space curve and line Interpolation and pose smoothing
+refer: [机械臂轨迹规划——空间圆弧和直线插补及姿态平滑](https://blog.csdn.net/Kalenee/article/details/86698110)

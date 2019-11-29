@@ -33,3 +33,98 @@ To use ros in python 3.5 , you should add path :
 ```
 /opt/ros/kinetic/lib/python2.7/dist-packages
 ```
+
+# 界面辅助设置
+1. 设置日志级别  refer:https://www.jianshu.com/p/8d23b4c12f6f
+```
+rqt_logger_level
+```
+2. 查看日志
+```
+rqt console
+```
+3. 查看image
+```
+rqt_image_view
+```
+4. 查看节点关系
+```
+rqt_graph
+```
+5. 修改参数服务器中参数的变量 rqt_reconfigure
+```
+rosrun rqt_reconfigure rqt_reconfigure
+```
+6. 显示数据流,画图
+```
+rqt_plot
+```
+
+# camera calibration
+refer:https://blog.csdn.net/heyijia0327/article/details/43538695
+需要三个工具:
+* rqt_image_view
+* usb_cam
+* camera_calibration
+
+标定cmd（0.03单位是m, 11*8 是标定板内点）
+```
+$ rosrun camera_calibration cameracalibrator.py --size 11x8 --square 0.006 image:=/usb_cam/image_raw camera:=/usb_cam
+```
+
+# ros 中 回调 并在qt gui中显示
+1. 使用ros subscriber的视频信息，在callback中应该只使用msg的简单处理，不适合在callback中做复杂的处理，不然会影响callback调用的速度。这个在订阅ros image信息，并在自己设计的qtgui中显示非常重要。。。
+2. qtgui中为显示大量的信息，需要使用多线程的方式。订阅的image显示，需要通过专门的QThread显示，在线程中处理简单的每帧，并发送一个signal，使用槽函数进行frame的显示。
+
+# rospy 相关函数
+refer : https://blog.csdn.net/qq_25678319/article/details/87938004
+
+# ros logging
+rospy 的logging 使用的是python的 logging 模块
+refer: 
+1. [python3_Logging模块详解](https://www.cnblogs.com/ranxf/p/7794240.html)
+2. [ROS与C++入门教程-Logging(日志)](https://www.ncnynl.com/archives/201702/1299.html)
+
+# ROS下同时接收多个话题并实现相机和雷达的数据融合
+refer: 
+1. https://blog.csdn.net/qq_29462849/article/details/88880699
+2. https://blog.csdn.net/ttomchy/article/details/86179713
+可以实现在视频流中显示雷达的激光线，无人车那个效果
+
+# Rosbag 数据记录转换为mp4视频
+
+1. 新建test.launch文件
+
+新建test.launch文件，并写入如下内容：
+```
+<launch>
+<node pkg="rosbag" type="play" name="rosbag" args="-d 2 home/rosbag/test.bag"/>
+<node name="extract" pkg="image_view" type="extract_images" respawn="false" output="screen"   cwd="ROS_HOME">
+  <remap from="image" to="image_raw"/>
+</node>
+</launch>
+```
+    第一个node标签末尾替换为自己的bag路径
+
+2. 运行launch文件，生成jpg图片
+```
+roslaunch test.launch
+```
+此时，bag中的数据被分离成一组图片，存放在“.ros”文件夹中，现在将其转移到指定目录下：
+```
+mkdir testImg
+mv ~/.ros/frame*.jpg testImg/
+```
+3. 将图片转换为视频
+```
+cd testImg
+ffmpeg -r 15  -s 1280*800 -i frame%04d.jpg test.mp4
+```
+或
+```
+cd testImg
+/* 生成yuv格式文件*/
+jpeg2yuv -I p -f 15 -j frame%04d.jpg -b 1 > test.yuv
+/* 将yuv格式文件转换为mp4格式*/
+ffmpeg -i test.yuv test.mp4
+```
