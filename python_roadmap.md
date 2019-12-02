@@ -24,3 +24,12 @@ string  | S  | 固定长度的字符串类型（每个字符1个字节）
 unicode  | U  | 固定长度的uincode类型（字数由平台决定）跟字符创的定义方式一样（如U10）
 
 # 使用非 用 not 不要用 ～
+
+
+## force to reinstall pip
+also for problem:
+"ModuleNotFoundError: No module named 'pip._internal'"
+```bash
+           curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+           python get-pip.py --force-reinstall
+```

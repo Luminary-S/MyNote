@@ -13,6 +13,7 @@
   - [1.8. Failed to restart network.service: Unit network.service failed to load: No such file or directory. OR 重启网卡提示:/org/freedesktop/NetworkManager/ActiveConnection/(n)](#18-failed-to-restart-networkservice-unit-networkservice-failed-to-load-no-such-file-or-directory-or-%e9%87%8d%e5%90%af%e7%bd%91%e5%8d%a1%e6%8f%90%e7%a4%baorgfreedesktopnetworkmanageractiveconnectionn)
   - [1.9. 让ubuntu使用更多的物理内存](#19-%e8%ae%a9ubuntu%e4%bd%bf%e7%94%a8%e6%9b%b4%e5%a4%9a%e7%9a%84%e7%89%a9%e7%90%86%e5%86%85%e5%ad%98)
   - [ubuntu 不能访问 127GB卷](#ubuntu-%e4%b8%8d%e8%83%bd%e8%ae%bf%e9%97%ae-127gb%e5%8d%b7)
+  - [ubuntu 更新后 界面显示不全](#ubuntu-%e6%9b%b4%e6%96%b0%e5%90%8e-%e7%95%8c%e9%9d%a2%e6%98%be%e7%a4%ba%e4%b8%8d%e5%85%a8)
 
 <!-- /TOC -->
 ## 1.1. clean Ubuntu core
@@ -137,4 +138,11 @@ swappiness=0的时候表示最大限度使用物理内存，然后才是 swap空
 sudo fdisk -l
 找到所在卷
 sudo ntfsfix /dev/sdb4
+```
+
+## ubuntu 更新后  界面显示不全
+```
+sudo apt update
+sudo apt -f install --reinstall  ubuntu-desktop
+sudo apt install unity
 ```

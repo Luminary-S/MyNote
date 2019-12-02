@@ -89,6 +89,7 @@
         + in the active window, choose the second one（activation code), then browser to http://idea.lanyus.com/, get the activation code from the website, copy the code to the box.
 
 ### 1.2.7. **ROS**
+ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
 1. refer ros wiki page: [install kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu) and [install blog](https://blog.csdn.net/softimite_zifeng/article/details/78632211)
 2. install step:
    1. Setup your sources.list
@@ -105,7 +106,7 @@
     ```
    4. Desktop-Full Install     
     ```bash
-    sudo apt-get install ros-kinetic-desktop-full
+    sudo apt-get install ros-melodic-desktop-full
     ```
 3. init step:
    1. Initialize rosdep 
@@ -117,7 +118,7 @@
    2. Environment setup
    
     ```bash
-    echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+    echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
     source ~/.bashrc
     ```
     3. Dependencies for building packages
@@ -148,7 +149,9 @@
    rosrun turtlesim turtle_teleop_key
    1) 打开新的Termial，输入以下命令，弹出新的窗口查看ROS节点信息：rosrun rqt_graph rqt_graph
 6. compile, catkin_make
-    + sudo apt-get install ros-kinetic-moveit ros-kinetic-visp ros-kinetic-urdfdom-py ros-kinetic-ros-control ros-kinetic-ros-type-introspection
+    + sudo apt-get install ros-melodic-moveit ros-melodic-visp ros-melodic-urdfdom-py ros-melodic-ros-control ros-melodic-ros-type-introspection ros-melodic-rosserial ros-melodic-serial
+    + [ros-industrial/universal_robot](https://github.com/ros-industrial/universal_robot/tree/melodic-devel)下载对应版本的universal_robot package
+    + install  plotjuggler: sudo apt-get install ros-melodic-plotjuggler 
 
 ### 1.2.8. **Qt**
 1. refer: qt official website [install qt](https://wiki.qt.io/Install_Qt_5_on_Ubuntu) and [install blog](https://blog.csdn.net/wuweifeng_2017/article/details/78322249) and [configuration](https://www.helplib.com/ubuntu/article_170121) 

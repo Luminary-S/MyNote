@@ -128,3 +128,42 @@ jpeg2yuv -I p -f 15 -j frame%04d.jpg -b 1 > test.yuv
 /* 将yuv格式文件转换为mp4格式*/
 ffmpeg -i test.yuv test.mp4
 ```
+
+# update warning when sudo update
+please insert the lastest public-key into your system
+```
+http://wiki.ros.org/kinetic/Installation/Ubuntu
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+```
+
+# catkin_make时提示from catkin_pkg.cli.find_pkg import main No module named 'catkin_pkg'
+
+这个问题有多种可能性解决办法为：
+1. solution for 1
+```bash
+pip install --user catkin_pkg
+pip install --user rosdep dosinstall_generator wstool rosinstall six vcstools
+pip install --user pydot
+```
+2. catkin_make 就不行，仔细看错误的提示，例如我的：
+```CMake Error at CMakeLists.txt:20 (message):
+  Search for 'catkin' in workspace failed (catkin_find_pkg catkin
+  /home/sgl/catkin_new/src): Traceback (most recent call last):
+
+    File "/home/sgl/.local/bin/catkin_find_pkg", line 5, in <module>
+      from catkin_pkg.cli.find_pkg import main
+
+  ModuleNotFoundError: No module named 'catkin_pkg'
+```
+关键是 file "/home/sgl/.local/bin/catkin_find_pkg", 去找这个文件，sudo 权限打开，看到里面的第一行是
+```python
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+import re
+import sys
+from catkin_pkg.cli.find_pkg import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
+```
+这里用的是python3, 实际上ros用的是python2. 修改 这个地方为python2,就可以了。。
