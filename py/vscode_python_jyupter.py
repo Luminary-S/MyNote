@@ -1,5 +1,5 @@
 #%% [markdown]
-% VScode Jyupter notebook
+% VScode Juypter notebook
 
 # %%
 print("hello world")

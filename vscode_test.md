@@ -1,8 +1,3 @@
-reference
-1. [乾坤平台](https://qiankunpingtai.cn/article/1558878943974)
-2. [mermaid](https://mermaid-js.github.io/mermaid/#/pie)
-3. [more drawing plugin](https://shd101wyy.github.io/markdown-preview-enhanced/#/diagrams?id=mermaid)
-4. [mermaid online tool](https://mermaidjs.github.io/ermaid-live-editor/)
 
 ```mermaid
 gantt
@@ -83,3 +78,9 @@ Note left of 起床: 新的一天
    Hello world!
 \end{document}
 ```
+
+reference
+1. [乾坤平台](https://qiankunpingtai.cn/article/1558878943974)
+2. [mermaid](https://mermaid-js.github.io/mermaid/#/pie)
+3. [more drawing plugin](https://shd101wyy.github.io/markdown-preview-enhanced/#/diagrams?id=mermaid)
+4. [mermaid online tool](https://mermaidjs.github.io/ermaid-live-editor/)
