@@ -1,6 +1,12 @@
 # vscode
+<!-- TOC -->
 
-## latex-workshop
+- [vscode](#vscode)
+  - [1. latex-workshop](#1-latex-workshop)
+  - [2. vscode markdown TOC](#2-vscode-markdown-toc)
+
+<!-- /TOC -->
+## 1. latex-workshop 
 refer: 
 * [latex-workshop](https://github.com/James-Yu/LaTeX-Workshop/wiki)
 * [Visual Studio Code 折腾记：LaTeX 集成编辑环境](https://blog.ceba.tech/2018/11/Visual-Studio-Code-LaTeX/index.html)
@@ -50,3 +56,6 @@ Backward: Use %{input} and %{line} as placeholders.
 ],
 
 ```
+## 2. vscode markdown TOC 
+refer: [VSCode为Markdown自动生成目录，解决目录不整齐问题](https://blog.csdn.net/u014171091/article/details/89629634)
+setting-> eol change it into '\r\n'(unix) or '\n'(windows)
