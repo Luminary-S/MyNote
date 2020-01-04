@@ -4,21 +4,20 @@
 - [1. Ubuntu 16.04 and windowns 10 two systems](#1-ubuntu-1604-and-windowns-10-two-systems)
   - [1.1. Install](#11-install)
   - [1.2. software install](#12-software-install)
-    - [1.2.1. **Terminator**](#121-terminator)
-    - [1.2.2. **Sogou Pinyin**](#122-sogou-pinyin)
-    - [1.2.3. **other Font install**](#123-other-font-install)
-    - [1.2.4. **VS Code**](#124-vs-code)
-    - [1.2.5. **Common Tools**](#125-common-tools)
-    - [1.2.6. **Pycharm**](#126-pycharm)
-    - [1.2.7. **ROS**](#127-ros)
-    - [1.2.8. **Qt**](#128-qt)
-    - [1.2.9. **PyQt5, python3 pycharm**](#129-pyqt5-python3-pycharm)
-    - [1.2.10. **Opencv**](#1210-opencv)
-    - [1.2.11. **pdf reader**](#1211-pdf-reader)
-    - [1.2.12. **eric**](#1212-eric)
-    - [1.2.13. **java**](#1213-java)
-    - [1.2.14. **arduino**](#1214-arduino)
-    - [1.2.15. **Vrep**](#1215-vrep)
+    - [1.2.1. Terminator](#121-terminator)
+    - [1.2.2. Sogou Pinyin](#122-sogou-pinyin)
+    - [1.2.3. other Font install](#123-other-font-install)
+    - [1.2.4. VS Code](#124-vs-code)
+    - [1.2.5. Common Tools](#125-common-tools)
+    - [1.2.6. Pycharm](#126-pycharm)
+    - [1.2.7. ROS](#127-ros)
+    - [1.2.8. Qt](#128-qt)
+    - [1.2.11. pdf reader](#1211-pdf-reader)
+    - [1.2.12. eric](#1212-eric)
+    - [1.2.13. java](#1213-java)
+    - [1.2.14. arduino](#1214-arduino)
+    - [1.2.15. Vrep](#1215-vrep)
+    - [1.2.16. SIMPACK](#1216-simpack)
 
 <!-- /TOC -->
 ## 1.1. Install
@@ -179,6 +178,17 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
 ### 1.2.10. **Opencv**
 1. download page, [opencv3.4.6](https://github.com/opencv/opencv/archive/3.4.6.zip)
 2. install refer, [ubuntu16.04安装opencv3.4.1教程](https://blog.csdn.net/cocoaqin/article/details/78163171)
+3. check opencv version:
+   
+   ```
+   pkg-config --modversion opencv
+   ```
+   in python :
+
+   ```python
+    import cv2
+    cv2.__version__
+   ```
 
 ### 1.2.11. **pdf reader**
 1. recommend Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
