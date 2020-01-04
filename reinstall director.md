@@ -4,21 +4,22 @@
 - [1. Ubuntu 16.04 and windowns 10 two systems](#1-ubuntu-1604-and-windowns-10-two-systems)
   - [1.1. Install](#11-install)
   - [1.2. software install](#12-software-install)
-    - [1.2.1. **Terminator**](#121-terminator)
-    - [1.2.2. **Sogou Pinyin**](#122-sogou-pinyin)
-    - [1.2.3. **other Font install**](#123-other-font-install)
-    - [1.2.4. **VS Code**](#124-vs-code)
-    - [1.2.5. **Common Tools**](#125-common-tools)
-    - [1.2.6. **Pycharm**](#126-pycharm)
-    - [1.2.7. **ROS**](#127-ros)
-    - [1.2.8. **Qt**](#128-qt)
-    - [1.2.9. **PyQt5, python3 pycharm**](#129-pyqt5-python3-pycharm)
-    - [1.2.10. **Opencv**](#1210-opencv)
-    - [1.2.11. **pdf reader**](#1211-pdf-reader)
-    - [1.2.12. **eric**](#1212-eric)
-    - [1.2.13. **java**](#1213-java)
-    - [1.2.14. **arduino**](#1214-arduino)
-    - [1.2.15. **Vrep**](#1215-vrep)
+    - [1.2.1. Terminator](#121-terminator)
+    - [1.2.2. Sogou Pinyin](#122-sogou-pinyin)
+    - [1.2.3. other Font install](#123-other-font-install)
+    - [1.2.4. VS Code](#124-vs-code)
+    - [1.2.5. Common Tools](#125-common-tools)
+    - [1.2.6. Pycharm](#126-pycharm)
+    - [1.2.7. ROS](#127-ros)
+    - [1.2.8. Qt](#128-qt)
+    - [1.2.9. PyQt5, python3 pycharm](#129-pyqt5-python3-pycharm)
+    - [1.2.10. Opencv](#1210-opencv)
+    - [1.2.11. pdf reader](#1211-pdf-reader)
+    - [1.2.12. eric](#1212-eric)
+    - [1.2.13. java](#1213-java)
+    - [1.2.14. arduino](#1214-arduino)
+    - [1.2.15. Vrep](#1215-vrep)
+    - [1.2.16. SIMPACK](#1216-simpack)
 
 <!-- /TOC -->
 ## 1.1. Install
@@ -49,6 +50,7 @@
     + other settings, refer to [terminator settings](https://www.jianshu.com/p/cee2de32ca28)
 
 ### 1.2.2. **Sogou Pinyin**
+refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8a2180e)
 1. download: [sogou pinyin linux]( https://pinyin.sogou.com/linux/?r=pinyin )
 2. install deb package: ```dpkg -i sougou****.deb ```
 
@@ -172,6 +174,10 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
    ```
 4. default desktop icon change, pls refer to the qt official website
 5. [install qt ros package](https://blog.csdn.net/u010925447/article/details/81702166)
+6. if no qtdesign, pls install:
+   ```
+   sudo apt install ros-melodic-desktop-full
+   ```
 
 ### 1.2.9. **PyQt5, python3 pycharm**
 1. refer : https://www.jianshu.com/p/094928ac0b73
