@@ -1,27 +1,5 @@
 # 1. Ubuntu 16.04 and windowns 10 two systems 
-<!-- TOC -->
-
-- [1. Ubuntu 16.04 and windowns 10 two systems](#1-ubuntu-1604-and-windowns-10-two-systems)
-  - [1.1. Install](#11-install)
-  - [1.2. software install](#12-software-install)
-    - [1.2.1. Terminator](#121-terminator)
-    - [1.2.2. Sogou Pinyin](#122-sogou-pinyin)
-    - [1.2.3. other Font install](#123-other-font-install)
-    - [1.2.4. VS Code](#124-vs-code)
-    - [1.2.5. Common Tools](#125-common-tools)
-    - [1.2.6. Pycharm](#126-pycharm)
-    - [1.2.7. ROS](#127-ros)
-    - [1.2.8. Qt](#128-qt)
-    - [1.2.9. PyQt5, python3 pycharm](#129-pyqt5-python3-pycharm)
-    - [1.2.10. Opencv](#1210-opencv)
-    - [1.2.11. pdf reader](#1211-pdf-reader)
-    - [1.2.12. eric](#1212-eric)
-    - [1.2.13. java](#1213-java)
-    - [1.2.14. arduino](#1214-arduino)
-    - [1.2.15. Vrep](#1215-vrep)
-    - [1.2.16. SIMPACK](#1216-simpack)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [1. Ubuntu 16.04 and windowns 10 two systems](#1-ubuntu-1604-and-windowns-10-two-systems)auto    - [1.1. Install](#11-install)auto    - [1.2. software install](#12-software-install)auto        - [1.2.1. **Terminator**](#121-terminator)auto        - [1.2.2. **Sogou Pinyin**](#122-sogou-pinyin)auto        - [1.2.3. **other Font install**](#123-other-font-install)auto        - [1.2.4. **VS Code**](#124-vs-code)auto        - [1.2.5. **Common Tools**](#125-common-tools)auto        - [1.2.6. **Pycharm**](#126-pycharm)auto        - [1.2.7. **ROS**](#127-ros)auto        - [1.2.8. **Qt**](#128-qt)auto        - [1.2.9. **PyQt5, python3 pycharm**](#129-pyqt5-python3-pycharm)auto        - [1.2.10. **Opencv**](#1210-opencv)auto        - [1.2.11. **pdf reader**](#1211-pdf-reader)auto        - [1.2.12. **eric**](#1212-eric)auto        - [1.2.13. **java**](#1213-java)auto        - [1.2.14. **arduino**](#1214-arduino)auto        - [1.2.15. **Vrep**](#1215-vrep)auto        - [1.2.16. **SIMPACK**](#1216-simpack)autoauto<!-- /TOC -->
 ## 1.1. Install
 1. check your computer as UEFI and Legacy 
 2. in UEFI, pls choose UEFI as the first boot choice in the BIOS, BIOS can be entered through press btn when you start your computer. For Lenovo latest computers, press "enter" is ok, others may be "F12" or "F2";
@@ -50,7 +28,7 @@
     + other settings, refer to [terminator settings](https://www.jianshu.com/p/cee2de32ca28)
 
 ### 1.2.2. **Sogou Pinyin**
-refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8a2180e)
+refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8a2180e)  and  [Ubuntu14.04.2安装搜狗输入法](https://blog.csdn.net/q1302182594/article/details/47068641)
 1. download: [sogou pinyin linux]( https://pinyin.sogou.com/linux/?r=pinyin )
 2. install deb package: ```dpkg -i sougou****.deb ```
 
@@ -220,3 +198,5 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
 ### 1.2.16. **SIMPACK**
 1. download ：http://www.3322.cc/soft/35934.html
 2. install: [SIMPACK2018 64](https://blog.csdn.net/xiaojuzitou/article/details/83144788)
+
+The critera of every problem can be found at the last line of every solution.
