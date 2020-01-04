@@ -48,6 +48,7 @@
     + other settings, refer to [terminator settings](https://www.jianshu.com/p/cee2de32ca28)
 
 ### 1.2.2. **Sogou Pinyin**
+refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8a2180e)
 1. download: [sogou pinyin linux]( https://pinyin.sogou.com/linux/?r=pinyin )
 2. install deb package: ```dpkg -i sougou****.deb ```
 
@@ -171,6 +172,10 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
    ```
 4. default desktop icon change, pls refer to the qt official website
 5. [install qt ros package](https://blog.csdn.net/u010925447/article/details/81702166)
+6. if no qtdesign, pls install:
+   ```
+   sudo apt install ros-melodic-desktop-full
+   ```
 
 ### 1.2.9. **PyQt5, python3 pycharm**
 1. refer : https://www.jianshu.com/p/094928ac0b73
