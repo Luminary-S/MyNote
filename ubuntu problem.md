@@ -3,6 +3,7 @@
 
 - [1. Solution for different Ubuntu Problems](#1-solution-for-different-ubuntu-problems)
   - [1.1. clean Ubuntu core](#11-clean-ubuntu-core)
+  - [check hardware information](#check-hardware-information)
   - [1.2. clean apt-get lock](#12-clean-apt-get-lock)
     - [1.2.1. 解决dpkg/apt-get error : 子进程 post-installation script 返回了错误号 1](#121-%e8%a7%a3%e5%86%b3dpkgapt-get-error--%e5%ad%90%e8%bf%9b%e7%a8%8b-post-installation-script-%e8%bf%94%e5%9b%9e%e4%ba%86%e9%94%99%e8%af%af%e5%8f%b7-1)
   - [1.3. “下载额外数据文件失败 ttf-mscorefonts-installer”的问题](#13-%e4%b8%8b%e8%bd%bd%e9%a2%9d%e5%a4%96%e6%95%b0%e6%8d%ae%e6%96%87%e4%bb%b6%e5%a4%b1%e8%b4%a5-ttf-mscorefonts-installer%e7%9a%84%e9%97%ae%e9%a2%98)
@@ -23,6 +24,48 @@ dpkg --list|grep linux-headers
 sudo apt-get purge linux-image-3.19.0-{18,20,21,25}
 sudo apt-get purge linux-headers-3.19.0-{18,20,21,25}
 ```
+## check hardware information
+
+  ```bash
+  #cpu的统计信息
+  lscpu
+  #查看/proc/cpuinfo,可以知道每个cpu信息，如每个CPU的型号，主频等。
+  cat /proc/cpuinfo
+
+  #概要查看内存情况,单位是MB
+  free -m
+  #查看内存详细使用
+  cat /proc/meminfo 
+  #查看内存硬件信息
+  dmidecode -t memory
+
+
+  #查看硬盘和分区分布
+  lsblk
+  #硬盘和分区的详细信息
+  fdisk -l
+  
+  #查看网卡硬件信息
+  lspci | grep -i 'eth'
+
+  #查看系统的所有网络接口
+  ifconfig -a
+  #或者是
+  ip link show
+  #如果要查看某个网络接口的详细信息，例如eth0的详细参数和指标
+  ethtool eth0
+
+
+  #查看pci信息，即主板所有硬件槽信息。
+  lspci
+  #如果要更详细的信息:
+  lspci -v 或者 lspci -vv
+  #如果要看设备树:
+  lscpi -t 
+
+  #查看bios信息
+  dmidecode -t bios
+  ```
 
 ## 1.2. clean apt-get lock
 ```

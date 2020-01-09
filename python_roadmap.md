@@ -33,3 +33,23 @@ also for problem:
            curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
            python get-pip.py --force-reinstall
 ```
+
+# pip
+```
+# install
+sudo apt install python3-pip
+sudo apt install build-essential python3-dev  python3-setuptools
+
+pip uninstall scrapy
+pip search scrapy
+pip list
+pip --version
+# list outdated package
+pip list --outdated
+```
+# view all package in browser
+python doc 查看所有的 安装包
+   ```
+   python -m pydoc -p 1234
+   pydoc server ready at http://localhost:1234/
+   ```
