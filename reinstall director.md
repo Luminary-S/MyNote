@@ -29,8 +29,8 @@ Ubuntu 18.04 in Windows 10 two systems
     - [2.10.4. installation](#2104-installation)
       - [cuda and nvidia](#cuda-and-nvidia)
       - [cudnn](#cudnn)
-        - [pycuda](#pycuda)
-        - [tensorflow-gpu](#tensorflow-gpu)
+      - [pycuda](#pycuda)
+      - [tensorflow-gpu](#tensorflow-gpu)
 - [3. unnecessary software install](#3-unnecessary-software-install)
   - [3.1. Matlab 2018a](#31-matlab-2018a)
   - [3.2. PyQt5, python3 pycharm](#32-pyqt5-python3-pycharm)
@@ -99,7 +99,7 @@ refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8
 NOTE: if TOC not automatically changes line, set EOL to \r\n in setting
  
 ## 2.5. **Common Tools**
-1. **git**: ```sudo apt-get install git```
+1. **git**: ```sudo apt-get install git```, git 的配置参看 git_roadmap.md
 2. **vim**: ```sudo apt-get install vim```
 3. **latest firefox**, download [firefox](https://www.mozilla.org/zh-CN/firefox/download/), create [shortcut](https://blog.csdn.net/qq_32166627/article/details/51108482); acc: ustc163; pwd, h; add-ons:
    1. lastpass
@@ -511,7 +511,7 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
     ./mnistCUDNN 
     ```
     
-##### pycuda
+#### pycuda
 * 查看pycuda的对应版本去[pycuda 官网](https://www.lfd.uci.edu/~gohlke/pythonlibs/?cm_mc_uid=08085305845514542921829&cm_mc_sid_50200000=1456395916#pycuda)；
     ```bash
     #查看CUDA版本, 2020-01-08, latest 10.2
@@ -524,7 +524,8 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
     sudo pip install pycuda
     sudo pip3 install pycuda==2019.1.2
     ```
-##### tensorflow-gpu
+#### tensorflow-gpu
+this method install the version can be checked by pip3 search tensorflow-gpu, however, may not suits the cuda version.
 * pre install:
   ```bash
   sudo pip3 install wheel
