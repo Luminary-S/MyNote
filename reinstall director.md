@@ -636,5 +636,3 @@ START
 1. download ：http://www.3322.cc/soft/35934.html
 2. install: [SIMPACK2018 64](https://blog.csdn.net/xiaojuzitou/article/details/83144788)
 
-The critera of every problem can be found at the last line of every solution.
-
