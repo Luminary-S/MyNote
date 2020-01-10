@@ -271,7 +271,7 @@ START:
    ```
 
 ## 2.9. **pdf reader**
-1. recommend Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
+1. recommend [master-pdf-editor](https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb)(careful about qt version), Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
 2. download [Foxcit Reader](https://www.foxitsoftware.cn/downloads/), automatically choose the version for your computer system.
 3. chmod of run file and sudo ./*.run if you want to install it for all files
 
