@@ -5,24 +5,24 @@ Ubuntu 18.04 in Windows 10 two systems
 - [Ubuntu 18.04 in Windows 10 two systems](#ubuntu-1804-in-windows-10-two-systems)
 - [1. Install](#1-install)
 - [2. necessary software install](#2-necessary-software-install)
-  - [2.1. Terminator](#21-terminator)
-  - [2.2. Sogou Pinyin](#22-sogou-pinyin)
-  - [2.3. other Font install](#23-other-font-install)
-  - [2.4. VS Code](#24-vs-code)
-  - [2.5. Common Tools](#25-common-tools)
-  - [2.6. ROS](#26-ros)
-  - [2.7. Qt](#27-qt)
+  - [2.1. **Terminator**](#21-terminator)
+  - [2.2. **Sogou Pinyin**](#22-sogou-pinyin)
+  - [2.3. **other Font install**](#23-other-font-install)
+  - [2.4. **VS Code**](#24-vs-code)
+  - [2.5. **Common Tools**](#25-common-tools)
+  - [2.6. **ROS**](#26-ros)
+  - [2.7. **Qt**](#27-qt)
     - [2.7.1. reference](#271-reference)
     - [2.7.2. download](#272-download)
     - [2.7.3. installation](#273-installation)
-  - [2.8. Opencv](#28-opencv)
+  - [2.8. **Opencv**](#28-opencv)
     - [2.8.1. reference](#281-reference)
     - [2.8.2. download](#282-download)
     - [2.8.3. install](#283-install)
     - [2.8.4. NOTE](#284-note)
     - [2.8.5. installation](#285-installation)
-  - [2.9. pdf reader](#29-pdf-reader)
-  - [2.10. NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)
+  - [2.9. **pdf reader**](#29-pdf-reader)
+  - [2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)
     - [2.10.1. Content](#2101-content)
     - [2.10.2. reference](#2102-reference)
     - [2.10.3. download](#2103-download)
@@ -32,14 +32,15 @@ Ubuntu 18.04 in Windows 10 two systems
       - [pycuda](#pycuda)
       - [tensorflow-gpu](#tensorflow-gpu)
 - [3. unnecessary software install](#3-unnecessary-software-install)
-  - [3.1. Matlab 2018a](#31-matlab-2018a)
-  - [3.2. PyQt5, python3 pycharm](#32-pyqt5-python3-pycharm)
-  - [3.3. Pycharm](#33-pycharm)
-  - [3.4. eric](#34-eric)
-  - [3.5. java](#35-java)
-  - [3.6. arduino](#36-arduino)
-  - [3.7. Vrep](#37-vrep)
-  - [3.8. SIMPACK](#38-simpack)
+  - [3.1. **Matlab 2018a**](#31-matlab-2018a)
+  - [3.2. **PyQt5, python3 pycharm**](#32-pyqt5-python3-pycharm)
+  - [3.3. **Pycharm**](#33-pycharm)
+  - [3.4. **eric**](#34-eric)
+  - [3.5. **java**](#35-java)
+  - [3.6. **arduino**](#36-arduino)
+  - [3.7. **Vrep**](#37-vrep)
+  - [3.8. **SIMPACK**](#38-simpack)
+  - [3.9. **latex in vs code and beamer**](#39-latex-in-vs-code-and-beamer)
 
 <!-- /TOC -->
 
@@ -115,6 +116,7 @@ NOTE: if TOC not automatically changes line, set EOL to \r\n in setting
    # path : /opt/foxitsoftware/foxitreader
    ```
 6. rtorrent torrent download: ```sudo apt install rtorrent```
+7. Indicator Stickynotes (desktop stickynotes)
 
 ## 2.6. **ROS**
 ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
@@ -271,7 +273,7 @@ START:
    ```
 
 ## 2.9. **pdf reader**
-1. recommend [master-pdf-editor](https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb)(careful about qt version), Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
+1. recommend [master-pdf-editor](https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb)(careful about qt version, active code: AZQWS_XEDC5_RFVT6-BY7G6-5DCSX), Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
 2. download [Foxcit Reader](https://www.foxitsoftware.cn/downloads/), automatically choose the version for your computer system.
 3. chmod of run file and sudo ./*.run if you want to install it for all files
 
@@ -635,4 +637,77 @@ START
 ## 3.8. **SIMPACK**
 1. download ：http://www.3322.cc/soft/35934.html
 2. install: [SIMPACK2018 64](https://blog.csdn.net/xiaojuzitou/article/details/83144788)
+
+## 3.9. **latex in vs code and beamer**
+1. 安装Latex环境
+```
+# 安装latex
+sudo apt-get install texlive-latex-base
+# 安装中文环境
+sudo apt-get install latex-cjk-all
+# 安装额外包
+sudo apt-get install texlive-latex-extra
+
+# 安装图形界面texmaker
+# sudo apt-get install texmaker
+
+# 安装xelatex
+sudo apt-get install texlive-xetex
+
+# 安装publisher
+sudo apt-get install texlive-publishers
+
+# install beamer.cls
+sudo apt install texlive-latex-recommended
+```
+2. 下载vscode
+    [官网下载](https://code.visualstudio.com/​code.visualstudio.com)
+3. 安装vscode
+```
+sudo dpkg -i <vs code名字>.deb
+```
+4. 安装插件Latex Workshop
+
+打开VS code，在插件栏搜索latex workshop,点击install
+
+
+4. 配置插件,打开setting.json，搜索latex-workshop.latex.recipes
+点击Edit in settings.json,写入下列行：
+```
+"latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+        "tools": [
+          "xelatex"
+        ]
+        },
+        {
+        "name": "xelatex->bibtex->exlatex*2",
+        "tools": [
+          "xelatex",
+          "bibtex",
+          "xelatex",
+          "xelatex"
+        ]
+      }],
+ 
+    "latex-workshop.latex.tools":[
+        {
+            "name":"xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        }, {
+            "name":"bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+```
 
