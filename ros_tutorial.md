@@ -6,7 +6,10 @@ ROS系统平时工作中使用的命令工具
 echo $ROS_PACKAGE_PATH
 /home/saneri/catkin_ws/src:/opt/ros/kinetic/share
 ```
-
+#### 创建一个package
+```
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+```
 #### roscore  命令是
 在运行所有ROS程序前首先要运行的命令。
 
