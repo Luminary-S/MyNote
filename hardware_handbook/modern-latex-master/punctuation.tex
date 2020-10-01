@@ -1,0 +1,157 @@
+\chapter{Punctuation}
+\label{punctuation}
+
+You would much rather encounter a panda that eats
+shoots and leaves than one that eats, shoots,
+and leaves.\punckern\endnote{Lynne Truss,
+\textit{Eats, Shoots \& Leaves} (New York, 2003)}
+Punctuation is a vital part of writing,
+and there's more to it than your keyboard suggests.
+
+\section{Quotation marks}
+
+\LaTeX{} doesn't automatically convert \texttt{"}straight\texttt{"} quotes
+into correctly-facing ``curly'' ones:
+\begin{leftfigure}
+\begin{lstlisting}
+"This isn't right."
+\end{lstlisting}
+\end{leftfigure}
+will get you
+\begin{leftfigure}
+\lm%
+"This isn't right."
+\end{leftfigure}
+Instead, use \texttt{\bfseries `} for opening quotes and \texttt{\bfseries '} for closing
+quotes.\punckern\footnote{If your keyboard happens to have keys for
+``curly'' quotes (\,\texttt{“}\,\texttt{”}\,), feel free to use those instead!
+Also, don't use \texttt{"} for closing double quotes.
+Not only does \texttt{``example"} look a bit unbalanced,
+but \texttt{"} is used as a formatting command when typesetting certain
+languages, like German. (See \chapref{i18n} for more on international
+typesetting.)}
+\begin{leftfigure}
+\begin{lstlisting}
+``It depends on what the meaning of the word `is' is.''
+\end{lstlisting}
+\end{leftfigure}
+quotes a former \acronym{us} president as,
+\begin{leftfigure}
+\lm%
+``It depends on what the meaning of the word `is' is.''
+\end{leftfigure}
+
+\section{Hyphens and dashes}
+
+Though they look similar,
+hyphens (\,-\,), en dashes (\,--\,),
+em dashes (\,---\,), and minus signs (\,$-$\,)
+serve different purposes.
+\begin{description}
+\item[Hyphens] have a few applications:\endnote{Matthew Butterick,
+    ``Hyphens and dashes''\quotekern,
+    \textit{Practical Typography},
+    \https{practicaltypography.com/hyphens-and-dashes.html}}
+    \begin{itemize}[leftmargin=*]
+    \item They allow a word to be split between the end of one line and the
+        start of the next.
+        \LaTeX{} usually handles this automatically.
+    \item Some compound words use hyphens, like \emph{long-range}
+        and \emph{field-effect}.
+    \item They are used in phrasal adjectives.
+        If I ask for ``five dollar bills''\punckern,
+        do I want five \$1 bills, or several \$5 bills?
+        It's clearer that I want the latter when typeset as
+        \emph{five-dollar bills}.
+    \end{itemize}
+    Unsurprisingly, they are produced with the hyphen character (\,\texttt{-}\,).
+
+\item[En dashes] are for ranges such as ``pages 4--12''\quotekern,
+    and connected words, like ``the \mbox{US--Canada} border''\quotekern.
+    \LaTeX{} places one wherever it sees two adjacent hyphens
+    (\,\texttt{--}\,).
+
+\item[Em dashes] are used to separate clauses of a sentence.
+    Other punctuation---like parenthesis and commas---play a similar
+    role.
+    Em dashes are typeset with three hyphens (\,\texttt{---}\,).
+
+\item[Minus signs] are used for negative quantities and
+    mathematical expressions.
+    They are similar in length to an en dash,
+    but sit at a different height.
+    Minus signs are set with \verb|\textminus|, or with the hyphen character
+    when in a math environment (see \chapref{math}).
+\end{description}
+
+\section{Ellipses}
+
+A set of three dots used to indicate a pause or omission is called an
+\introduce{ellipsis}.
+It is set with \verb|\dots|.
+\begin{leftfigure}
+\begin{lstlisting}
+I'm\dots{} not sure.
+\end{lstlisting}
+\end{leftfigure}
+becomes
+\begin{leftfigure}
+\lm%
+I'm\dots{} not sure.
+\end{leftfigure}
+Ellipses are spaced differently than consecutive periods.
+Don't use the latter as a poor substitute for the former.
+
+\section{Spacing}
+
+As we discovered in \chapref{hello},
+\LaTeX{} inserts additional space between periods and whatever
+follows them---presumably the start of the next sentence.
+This isn't always what we want!
+Consider honorifics like Mr.\ and Ms., for example.
+In situations like these, we also need to prevent \LaTeX{} from starting a
+new line after the period.
+This calls for a \introduce{non-breaking space}, which we set with a tilde.
+\begin{leftfigure}
+\begin{lstlisting}
+Please call Ms.~Shrdlu.
+\end{lstlisting}
+\end{leftfigure}
+produces proper spacing:
+\begin{leftfigure}
+\lm%
+Please call Ms.~Shrdlu.
+\end{leftfigure}
+
+In other occasions, such as when we abbreviate units of
+measurement,\punckern\footnote{There are also dedicated packages for doing so,
+like \texttt{siunitx}.}
+we want thinner spaces than our usual inter-word ones.
+For these, we use \verb|\,|\,:
+\begin{leftfigure}
+\begin{lstlisting}
+Launch in 2\,h 10\,m.
+\end{lstlisting}
+\end{leftfigure}
+announces
+\begin{leftfigure}
+\lm%
+Launch in 2\,h 10\,m.
+\end{leftfigure}
+
+\section{What next?}
+\begin{itemize}
+\item Learn other commands for spacing, such as \verb|\:|, \verb|\;|,
+    \verb|\enspace|, and \verb|\quad|.
+\item Use the \texttt{csquotes} package's \verb|\enquote| to simplify
+    nested quotations, e.g., \\
+    \enquote{She exclaimed, \enquote{I can't believe it!}}
+\item Discover the typographical origins of terms like \introduce{en},
+    \introduce{em}, and \introduce{quad}.
+\item Familiarize yourself with the difference between \texttt{/} and
+    \verb|\slash|.
+\item Add hyphenations for uncommon words using \verb|\hyphenate|
+    or \verb|\-|\,.\punckern\footnote{\LaTeX{} usually does a good
+    job of automatically hyphenating words, based on a dictionary of patterns
+    stored for each language. You should rarely need to use these commands.}
+\end{itemize}

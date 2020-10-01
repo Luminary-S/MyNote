@@ -1,0 +1,124 @@
+\setlength\parskip{0.55\baselineskip}
+\setlength\parindent{0pt}
+
+\chapter{Additional Resources}
+\label{resources}
+
+\section{For \texorpdfstring{\LaTeX}{LaTeX}}
+
+As promised at the start, this book is incomplete.
+To keep it short,
+major \LaTeX{} features---like figures, captions, tables, graphics,
+and bibliographies---haven't been discussed.
+Use some of these resources to fill in the gaps:
+\begin{leftfigure}
+The \LaTeX{} Wikibook, at \https{en.wikibooks.org/wiki/LaTeX}
+
+\textit{The Not So Short Introduction to \LaTeX}, \\
+available at \https{www.ctan.org/tex-archive/info/lshort/english/}
+
+The Share\LaTeX{} knowledge base, at \https{www.sharelatex.com/learn}
+
+The \TeX{} Stack Exchange, at \https{tex.stackexchange.com/}
+\end{leftfigure}
+
+\section{For typography}
+
+We've spent most of our time here focusing \emph{what} you can do with \LaTeX,
+and little on \emph{how} you should use it to create well-designed documents.
+Read on:
+\begin{leftfigure}
+\textit{Practical Typography}, by Matthew Butterick. \\
+Available (for free!) at \https{practicaltypography.com}
+
+\textit{Stop Stealing Sheep \& Find Out How Type Works}, by Erik Spiekermann
+
+\textit{Thinking With Type}, by Ellen Lupton
+
+\textit{Shaping Text}, by Jan Middendorp
+
+\textit{The Elements of Typographic Style}, by Robert Bringhurst
+
+\textit{Detail in Typography}, by Jost Hochuli
+\end{leftfigure}
+
+\backmatter
+
+\setkomafont{chapter}{\Huge\itshape}
+
+% Chicago Manual of Style, Notes & Bib style, ish.
+% http://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-1.html
+\chapter{Notes}
+
+% Endnotes _mostly_ works... with Koma Script, no less.
+% I suppose I can only grumble a little about the hackery below.
+
+% The \llap in \enoteformat throws the endnote number into the margin.
+% To compensate, measure about the width of our widest endnote mark
+% (see \makeenmark)...
+\newlength{\enotewidth}
+\settowidth{\enotewidth}{00.\enspace}
+
+% We slapped down our own endnotes heading above with \chapter{Notes},
+% so make the package do nothing when it tries.
+\renewcommand\enoteheading{}
+% Use our normal figures here instead of the superiors we marked endnotes with
+% in the body text.
+\renewcommand\makeenmark{\theenmark.\enspace}
+% Normal size
+\renewcommand\enotesize{\normalsize}
+% TeX hackery lifted from endnotes.sty
+% See https://www.tutorialspoint.com/tex_commands/llap.htm
+% https://tex.stackexchange.com/q/22852/92465
+\renewcommand\enoteformat{\leavevmode\llap{\makeenmark}}
+% Indent the whole section by our measured amount much.
+\begin{adjustwidth}{\enotewidth}{0pt}
+\raggedright
+\theendnotes
+\end{adjustwidth}
+
+% Redefine cleardoublepage so the Colophon doesn't demand a front page.
+% From https://tex.stackexchange.com/a/24068/92465
+{\let\cleardoublepage\clearpage \chapter{Colophon}}
+
+This guide was typeset with \LuaLaTeX{} in Robert Slimbach's Garamond Premier.
+His revival is based on roman type by
+\otford{16}{th} century French
+punchcutter Claude Garamond.
+Italics are inspired by the work of Garamond's contemporary Robert Granjon.
+
+Monospaced items are set in \texttt{Drive Mono},
+designed by Elliott Amblard and Jérémie Hornus at Black Foundry.
+
+Captions use
+\textsf{\small Neue Haas Grotesk},
+a Helvetica restoration by Christian Schwartz.
+Other digitizations of the ubiquitous Swiss typeface are based on fonts made for
+Linotype and phototypesetting machines,
+resulting in digital versions with all the compromises and kludges from those
+past two generations of printing technology.
+Schwartz based his work on Helvetica's original drawings,
+producing a design faithful to the original cold metal type.
+
+{\fontspec[Ligatures=TeX, Scale=MatchLowercase]{Futura-Boo}URW Futura}
+makes a few guest appearances.
+Designed by Paul Renner and first released in 1927,
+Futura has found itself almost everywhere,
+from advertising and political campaigns to the moon.
+Douglas Thomas's recent history of the typeface,
+\textit{Never Use Futura}, is a fantastic read.
+
+Various bits of non-Latin text are set in
+{\fontspec[Ligatures=TeX,Scale=MatchLowercase]{NotoSerif-Regular}Noto},
+a type family by Google that covers \emph{every} language
+in the Unicode standard.
+
+Finally,
+{\lm Latin Modern}---the OpenType version of Knuth's Computer Modern used throughout
+the book---and
+{\fontspec[Scale=MatchUppercase]{TeX Gyre Termes}\TeX{} Gyre Termes}---the
+free alternative to Times Roman seen on page \pageref{typography}---are the
+work of Grupa Użytkowników Systemu \TeX{}, the Polish \TeX{} Users' Group.
+An overview of these projects can be found at the following locations:\\
+\http{www.gust.org.pl/projects/e-foundry/latin-modern} \\
+\http{www.gust.org.pl/projects/e-foundry/tex-gyre}.

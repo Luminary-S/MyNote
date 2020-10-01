@@ -1,0 +1,324 @@
+\chapter{Fonts}
+\label{fonts}
+
+Digital fonts have changed almost entirely in the past thirty years.
+Originally, \LaTeX{} used \MF,
+a system designed by Donald Knuth specifically for \TeX{}.
+As time went on, support for PostScript\footnote{One of
+Adobe's original claims to fame,
+PostScript is a language for defining and drawing computer graphics,
+including type. It remains in widespread use today.} fonts was added.
+Today, \LuaLaTeX{} and \XeLaTeX{} support the font formats you're
+most likely to encounter on your computer:
+TrueType and OpenType.\punckern\footnote{Mac versions of \LaTeX{} also support
+Apple's \acronym{aat}, but let's limit this discussion to
+more ubiquitous formats.}
+
+\begin{description}
+\item[TrueType] was developed by Apple and Microsoft in the late 1980s.
+    Most of the fonts that come pre-installed on your system are likely
+    in this format.
+    TrueType files generally end in a \monobox{.ttf} extension.
+\item[OpenType] was first released by Microsoft and Adobe in 1996.
+    Improvements over TrueType include its ability to embed
+    various ``features''\quotekern, such as alternative glyphs
+    and spacing options, into a single font file.
+    OpenType files usually end in an \monobox{.otf} extension.
+\end{description}
+
+\section{Changing fonts}
+
+By default, \LuaLaTeX{} and \XeLaTeX{} use Latin Modern,
+an OpenType rendition of \LaTeX's original type family, Computer Modern.
+While these are high-quality fonts,
+they're probably not the only ones you ever want to use.
+For others, we turn to the \texttt{fontspec} package:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass{article}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Source Serif Pro}
+\setsansfont[Ligatures=TeX]{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+\begin{document}
+Hello, Source type family! Neat---no? \\
+\sffamily Let's try sans serif! \\
+\ttfamily Let's try monospaced!
+\end{document}
+\end{lstlisting}
+\end{leftfigure}
+should produce something like\footnote{Assuming, of course,
+that you have Adobe's open-source fonts installed.\punckern\endnote{Adobe's
+open-source typefaces are freely available at
+\https{github.com/adobe-fonts}}}
+\begin{leftfigure}
+\fontspec[Ligatures=TeX]{Source Serif Pro} Hello, Source type family! Neat---no? \\
+\fontspec[Ligatures=TeX]{Source Sans Pro} Let's try sans serif! \\
+\fontspec{Source Code Pro} Let's try monospaced!
+\end{leftfigure}
+The \verb|Ligatures=TeX| option lets you use the punctuation
+shortcuts from \chapref{punctuation} (e.g., \texttt{--} for en dashes, or
+\texttt{``} and \texttt{''} for curly quotes)
+instead of forcing you to enter the the corresponding characters,
+which probably aren't on your keyboard.
+You often don't want these substitutions when setting monospaced type, though.
+Text that uses it---such as code---is usually meant to be printed
+verbatim. \verb|"Hello!"| shouldn't turn into
+\verb|“Hello!“|.
+
+\section{Selecting font files}
+
+Typefaces come packaged as multiple files for their various
+weights and styles---a typical set includes upright,
+\textit{italics},
+\textbf{bold}, and
+\textit{\textbf{bold italics}}.
+Given a typeface's name,
+\texttt{fontspec} can usually deduce the names of its
+files.\punckern\footnote{This is
+one of the places where \XeLaTeX{} and \LuaLaTeX{}
+differ in a way that's noticeable to the casual user.
+The former uses system libraries---such as FontConfig on Linux---to
+find the font files for the typefaces you request.
+The latter has its own font loader,
+based on code from FontForge.\punckern\endnote{\textit{\LuaTeX{} Reference}
+(Version 1.0.4, February 2017), 10}
+The expected name of a font might differ between the two engines---refer
+to the \texttt{fontspec} manual for details.
+If you have trouble getting \LaTeX{} to find \emph{any} of your fonts,
+try rebuilding your system's font cache.
+(Figuring out how to do so is left as a web search for the reader.)}
+
+However, many typefaces come in more than two weights.
+The version of Futura used in this book, for example, comes in
+{\fontspec[Scale=MatchLowercase]{Futura-Lig}light},
+{\fontspec[Scale=MatchLowercase]{Futura-Boo}book},
+{\fontspec[Scale=MatchLowercase]{Futura-Med}medium},
+{\fontspec[Scale=MatchLowercase]{Futura-Dem}demi},
+{\fontspec[Scale=MatchLowercase]{Futura-Bol}bold}, and
+{\fontspec[Scale=MatchLowercase]{Futura-ExtBol}extra bold}.
+Additional styles, such as
+{\fontspec[Scale=MatchLowercase]{FuturaSc-Boo}small capitals},
+may be stored in separate files as well.\punckern\footnote{%
+OpenType allows these alternative styles to be placed in the same file(s) as the
+``main'' glyphs for a given weight.
+If your font supports this, you don't need to do anything---\texttt{fontspec}
+will dutifully switch to them whenever you use
+\monobox{\textbackslash textsc} or \monobox{\textbackslash scshape}.
+But for TrueType, and for OpenType fonts that don't take advantage of this
+feature, you'll have to load a separate file as shown here.}
+We might want to hand-pick weights to achieve a certain look or better match the
+weights of other fonts in our document.\punckern\footnote{Compare how
+{\fontspec[Scale=MatchLowercase]{Futura-Lig}the light,}
+{\fontspec[Scale=MatchLowercase]{Futura-Boo}book,}
+{\fontspec[Scale=MatchLowercase]{Futura-Med}and medium weights}
+of Futura look next to the rest of the type on this page.}
+Continuing to use Futura as an example,
+say we want to use the ``book'' weight as our default
+and ``demi'' for bold.
+Assuming the font files are named:
+\begin{itemize}
+\item \monobox{Futura-Boo} for our
+    {\fontspec[Scale=MatchLowercase]{Futura-Boo}upright book weight}
+\item \monobox{Futura-BooObl} for our
+    {\fontspec[Scale=MatchLowercase]{Futura-BooObl}oblique book weight}
+\item \monobox{FuturaSC-Boo} for
+    {\fontspec[Scale=MatchLowercase]{FuturaSC-Boo}small caps, book weight}
+\item \monobox{Futura-Dem} for
+    {\fontspec[Scale=MatchLowercase]{Futura-Dem}upright demi(bold)}
+\item \monobox{Futura-DemObl} for
+    {\fontspec[Scale=MatchLowercase]{Futura-DemObl}oblique demibold}
+\end{itemize}
+
+\noindent Our setup might resemble:
+\begin{leftfigure}
+\begin{lstlisting}
+\usepackage{fontspec}
+\setmainfont[
+    Ligatures=TeX,
+    UprightFont = *-Boo,
+    ItalicFont = *-BooObl,
+    SmallCapsFont = *SC-Boo,
+    BoldFont = *-Dem,
+    BoldItalicFont = *-DemObl
+]{Futura}
+\end{lstlisting}
+\end{leftfigure}
+Note that instead of typing out \monobox{Futura-Boo},
+\monobox{Futura-BooObl}, and so on, we can use \texttt{*} to insert the base name.
+
+\section{Scaling}
+
+Creating a cohesive design with multiple fonts is tricky,
+especially since typefaces might look completely different
+at the same point size.
+\texttt{fontspec} can help here by scaling fonts to match either the
+x-height or the cap height of your main font with
+\verb|Scale=MatchLowercase| or \verb|Scale=MatchUppercase|,
+respectively.\footnote{One way to sidestep this issue is to have fewer
+typefaces in your design. Just one or two,
+used carefully, can produce amazing results.}
+
+
+\section{OpenType features}
+
+As mentioned at the start of the chapter,
+OpenType fonts provide various features that can be turned on and off.
+In \LaTeX{}, these are controlled through \texttt{fontspec}
+with optional arguments to \verb|\setmainfont| and friends.
+They can also be set for the current group with
+\verb|\addfontfeature|.
+Let's examine a few common ones.
+
+\subsection{Ligatures}
+
+Many typefaces use \introduce{ligatures}, which combine multiple characters
+into a single glyph.\punckern\footnote{Ligatures fell out
+of style during the 20{\addfontfeature{VerticalPosition=Superior}th}
+century due to limitations of printing technology and the increased popularity
+of sans serif typefaces, which often lack them.
+Today they are making a comeback,
+thanks in no small part to their support in OpenType.}
+OpenType groups ligatures into three categories:
+\begin{description}
+\item[Standard] ligatures remedy spacing problems between certain characters.
+    Consider lowercase f and i: in many serif typefaces,
+    these combine to form the ligature fi,
+    avoiding awkward spacing between f's ascender and i's dot
+    {\addfontfeature{Ligatures=CommonOff} (\,fi\,)}.
+    Other common examples in English writing include ff,
+    ffi, fl, and ffl.
+    Standard ligatures are enabled by default.
+\item[Discretionary] ligatures, such as
+    {\addfontfeature{Ligatures=Discretionary}ct},
+    are offered by some fonts.
+    They are disabled by default
+    but can be enabled with
+    \verb|Ligatures=Discretionary|.
+\item[Historical] ligatures are ones which have fallen out of common use,
+    such as those with a \introduce{long~s} (e.g., ſt).
+    These are also disabled by default
+    but can be enabled with \verb|Ligatures=Historic|.
+\end{description}
+Multiple options can be grouped together.
+Say you want discretionary ligatures.
+In the likely event that you also want \verb|Ligatures=TeX|,
+you would enable both with
+\verb|Ligatures={TeX,Discretionary}|.
+Ligatures can also be disabled with corresponding \verb|*Off|
+options. If you want to stop using discretionary ligatures for some passage,
+\begin{leftfigure}
+\begin{lstlisting}
+{\addfontfeature{Ligatures=DiscretionaryOff}...}
+\end{lstlisting}
+\end{leftfigure}
+does the trick.
+
+Some words are arguably typeset better without ligatures---a classic example
+is shelfful.\punckern\endnote{Knuth, \textit{The \TeX book},
+(Addison-Wesley, 1986), 19}
+You can manually prevent ligatures with a zero-width
+space, e.g., \verb|shelf\hspace{0pt}ful|.
+You can also use the \texttt{selnolig} package to handle most of these cases
+automatically.
+
+\subsection{Figures}
+
+When setting figures,\punckern\footnote{\introduce{Figure}
+here refers to what some might call a \introduce{numeral} or
+\introduce{digit}---i.e., 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
+Typographers generally prefer the first term over the other two.}
+you have two
+choices to make: lining versus oldstyle,
+and proportional versus tabular.
+\introduce{Lining} figures, sometimes called \introduce{titling} figures,
+have heights similar to capital letters:
+\begin{leftfigure}
+\addfontfeature{Numbers=LowercaseOff}
+A B C D 1 2 3 4
+\end{leftfigure}
+\introduce{Oldstyle}, or \introduce{text} figures,
+share more similarities with lowercase letters:
+\begin{leftfigure}
+Sitting cross-legged on the floor\dots{} 25 or 6 to 4?
+\end{leftfigure}
+For body text, either choice is fine, but oldstyle figures shouldn't
+be combined with capital letters.
+``F-15C'' looks odd, as does ``V2.3 Release''\quotekern.
+
+{\addfontfeature{Numbers=LowercaseOff}
+The terms \introduce{proportional} and \introduce{tabular} refer to spacing.
+Tabular figures are set with a uniform width, such that 1 takes up
+the same space as 8.
+As their name suggests, this is great for tables and other scenarios
+where figures must line up in columns:}
+\begin{leftfigure}
+\addfontfeature{Numbers={Tabular,LowercaseOff}}
+\begin{tabular}{l|c r}
+Item & Qty. & Price \\
+\hline
+Gadgets & 42 & \$5.37 \\
+Widgets & 18 & \$12.76 \\
+\end{tabular}
+\end{leftfigure}
+Proportional figures are the opposite---their spacing is, well\dots{}
+\emph{proportional} to the width of each figure.
+They are usually preferred in body text, where 1837
+looks a bit nicer than
+{\addfontfeature{Numbers=Tabular}1837}.
+
+You select figures with the following options:
+\begin{leftfigure}
+\begin{tabular}{l l}
+\texttt{Numbers=} & \texttt{Lining / Uppercase} \\
+ & \texttt{OldStyle / Lowercase} \\
+ & \texttt{Proportional} \\
+ & \texttt{Tabular / Monospaced}
+\end{tabular}
+\end{leftfigure}
+As with ligature options, these can be combined:
+proportional lining figures are set
+with \texttt{Numbers=\allowbreak\{Proportional,\allowbreak Lining\}},
+and tabular oldstyle figures are set with
+\texttt{Numbers=\allowbreak\{Tabular,\allowbreak OldStyle\}}.
+Each option also has a corresponding \verb|*Off|
+variant.\punckern\footnote{This is especially useful since fonts
+select figures in different ways.
+In some, \texttt{Numbers=\allowbreak Lining} doesn't work,
+so you enable oldstyle figures with \monobox{Numbers=OldStyle}
+and return to lining figures (the default) with
+\texttt{Numbers=\allowbreak OldStyleOff}.}
+
+Finally, some fonts provide \introduce{superior and inferior} figures,
+which are used to set ordinals
+(\otford{1}{st}, \otford{2}{nd} \otford{3}{rd}, \dots),
+fractions (\,\otffrac{25}{624}\,), and so on.
+They have the same weight as the rest of the font's characters,
+offering a more consistent look than shrunken versions of full-sized figures.
+(Compare the examples above to their imposters:
+{\fontspec[OpticalSize=0]{garamondpremrpro}%
+\mbox{1\textsuperscript{st}},
+\mbox{2\textsuperscript{nd}},
+\mbox{3\textsuperscript{rd}},
+and
+\,\mbox{\textsuperscript{25}^^^^2044\textsubscript{624}}%
+\,}.
+Notice how this second set is too light compared to the surrounding
+type.)
+Superior figures are typeset with
+\texttt{VerticalPosition=\allowbreak Superior},
+and inferiors are set with \texttt{VerticalPosition=\allowbreak Inferior}.
+
+\section{What next?}
+\begin{itemize}
+\item Learn how \texttt{fontspec} can choose optical sizes based on
+    point size, either automatically from ranges embedded in OpenType fonts,
+    or manually using \texttt{SizeFeatures}.
+\item Experiment with letter spacing---or \introduce{tracking}---with
+    the \texttt{LetterSpace} option.
+    Extra tracking is unnecessary in most cases,
+    but can be useful to make \textsc{small caps}
+    a little more \acronym{readable}.
+\end{itemize}

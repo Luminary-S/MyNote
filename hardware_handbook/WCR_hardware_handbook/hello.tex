@@ -1,0 +1,295 @@
+\chapter{Hello, \texorpdfstring{\LaTeX}{LaTeX}!}
+\label{hello}
+
+Now that you have \LaTeX{} installed,
+let's try it out.
+Open up your favorite text editor and save the following as \texttt{hello.tex}:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass{article}
+% Say hello
+\begin{document}
+Hello, World!
+\end{document}
+\end{lstlisting}
+\end{leftfigure}
+Next, we'll run this file through \LaTeX{} (the program)\footnote{Not to be
+confused with \LaTeX{} the lunchbox, \LaTeX{} the breakfast cereal,
+or \LaTeX{} the flamethrower. The kids love this stuff!}
+to get our document.
+The installation placed several different versions---or
+\introduce{engines}---on your machine,
+but throughout this book, we'll use the newest ones:
+\LuaLaTeX{} and \XeLaTeX.\punckern\footnote{See Appendix~\ref{history} for a
+comparison of the various \LaTeX{} engines.}
+
+If you are using a \LaTeX{}-specific editor, it should have some menu
+to select the engine you'd like to use,
+along with a button to generate your document.
+Otherwise, run the following from your terminal:\footnote{%
+How to work a terminal emulator,
+make sure the newly-installed \LaTeX{} programs are in your \texttt{PATH},
+and so on are all outside the scope of this book.
+As is tradition, the leading dollar sign in this example just denotes a console
+prompt, and shouldn't actually be typed.}
+\begin{leftfigure}
+\begin{lstlisting}
+$ xelatex hello.tex
+\end{lstlisting}
+\end{leftfigure}
+Feel free to try \texttt{lualatex} instead---there are a few differences
+between the two that we'll discuss later, but either is fine for now.
+With luck, you should see some output that ends in a message like:
+\begin{leftfigure}
+\begin{lstlisting}
+Output written on hello.pdf (1 page).
+Transcript written on hello.log.
+\end{lstlisting}
+\end{leftfigure}
+And in your current directory, you should find a newly minted \texttt{hello.pdf}.
+Open it up and you should see a page with this at the top:
+\begin{leftfigure}
+\lm Hello, World!
+\end{leftfigure}
+Congrats,
+you created your first document!
+Let's unpack what we just did.
+
+All \LaTeX{} documents begin with a \verb|\documentclass| declaration,
+which picks a base ``style'' to use.
+Many classes are available---and you can even create your own---but common
+ones include \texttt{article}, \texttt{report}, \texttt{book},
+and \texttt{beamer}.\punckern\footnote{This last one is for slideshows.
+The name is a German term for a projector.}
+For the average document,
+\texttt{article} is probably a good choice.
+The next line, \verb|% Say hello|,
+is a \introduce{comment}.
+\LaTeX{} ignores the rest of a line once it sees a percent sign,
+so we use it to leave notes for anybody reading
+the document's source.\punckern\footnote{Including, perhaps most importantly,
+a confused version of your future self!}
+Finally, \verb|\begin{document}| tells \LaTeX{} that what follows
+is our actual contents,
+and \verb|\end{document}| states that we are finished.
+
+Let's cover some more basics.
+
+\section{Spacing}
+
+\LaTeX{} generally handles inter-word spacing for you, regardless of how many
+times you mash the space bar or tab key.
+For example,
+\begin{leftfigure}
+\begin{lstlisting}
+The number  of   spaces    between words doesn't   matter.
+The same is true for space between sentences.
+
+An empty line ends the previous paragraph and
+starts the next.
+\end{lstlisting}
+\end{leftfigure}
+yields
+\begin{leftfigure}
+\lm The number  of   spaces    between words doesn't   matter.
+The same is true for space between sentences.
+
+An empty line ends the previous paragraph and
+starts the next.
+\end{leftfigure}
+Notice that \LaTeX{} automatically follows typographic
+conventions, such as indenting new paragraphs and leaving more space after a
+period than between words.
+One quirk to be aware of is that comments ``eat'' any leading
+space on the following line, so
+\begin{leftfigure}
+\begin{lstlisting}
+This% weird, right?
+  is strange.
+\end{lstlisting}
+\end{leftfigure}
+gives
+\begin{leftfigure}
+\lm This% weird, right?
+  is strange.
+\end{leftfigure}
+
+\section{Commands}
+
+\LaTeX{} provides various commands to format your text,
+and you can define your own as well.
+Their names always begin with a backslash (\,\texttt{\textbackslash}\,),
+contain only letters, and are case-sensitive.\punckern\footnote{%
+% \verb doesn't play nicely in footnotes, so...
+\texttt{\textbackslash foo}
+is different from \texttt{\textbackslash Foo}, for example.}
+Some commands need more information, or \introduce{arguments}:
+\verb|\documentclass|,
+for example, needs to know which class we want.
+Arguments are enclosed in consecutive pairs of braces,
+so if some command needed two arguments, we would type:
+\begin{leftfigure}
+\begin{lstlisting}
+\somecommand{argument1}{argument2}
+\end{lstlisting}
+\end{leftfigure}
+
+Many commands also take optional arguments.
+They precede the mandatory ones,
+are enclosed in square brackets, and are separated by commas.
+Say you want to inform \LaTeX{} that your document should be printed as double-sided
+pages\footnote{\texttt{twoside} introduces commands
+that only make sense in the context of double-sided printing,
+such as ones that skip to the start of the next odd page.
+It also allows you to have different margins for even and odd pages,
+which is useful for texts like this book.}
+in 11~point
+type.\punckern\footnote{We'll discuss font sizes in \chapref{formatting}.}
+We make these demands as optional \verb|\documentclass| arguments:
+\begin{leftfigure}
+\begin{lstlisting}
+\documentclass[11pt, twoside]{article}
+\end{lstlisting}
+\end{leftfigure}
+
+Other commands take no arguments at all---\verb|\LaTeX|,
+which prints the \LaTeX{} logo, is one example.
+These commands consume any space that follows them.
+For example,
+\begin{leftfigure}
+\begin{lstlisting}
+\LaTeX is great, but it can be a bit odd sometimes.
+\end{lstlisting}
+\end{leftfigure}
+will give you
+\begin{leftfigure}
+\lm \LaTeX is great, but it can be a bit odd sometimes.
+\end{leftfigure}
+You can fix this with an empty pair of braces following the command.
+Of course, braces aren't needed if there is no space to preserve:
+\begin{leftfigure}
+\begin{lstlisting}
+Let's learn \LaTeX! \LaTeX{} is a powerful tool,
+but a few of its rules are a little weird.
+\end{lstlisting}
+\end{leftfigure}
+gets us
+\begin{leftfigure}
+\lm Let's learn \LaTeX! \LaTeX{} is a powerful tool,
+but a few of its rules are a little weird.
+\end{leftfigure}
+
+\section{Special characters and line breaks}
+
+Some characters have special meanings in \LaTeX.
+We saw above, for example, that \verb|%| starts a comment
+and \verb|\| starts a command.
+The full list of special characters is:
+\begin{leftfigure}
+\begin{lstlisting}
+# $ % ^ & _ { } ~ \
+\end{lstlisting}
+\end{leftfigure}
+Each has a corresponding command
+for actually printing it in your document. Respectively, they are:
+\begin{leftfigure}
+\begin{lstlisting}
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+\end{lstlisting}
+\end{leftfigure}
+Regardless of whatever follows them,
+the caret (\,\texttt{\^{}}\,) and tilde (\,\~{}\,) always need braces.
+This is a relic from days when these commands produced
+\introduce{diacritical marks}:
+once upon a time, \LaTeX{} users would typeset ``jalapeño'' with
+\verb|jalape\~no|.
+Today we just type \texttt{ñ} into our source
+file.\punckern\footnote{This can be easier or harder depending
+on your keyboard, your editor, and your language settings in your \acronym{os}.
+We'll talk more about languages and Unicode fun in \chapref{i18n}.}
+
+If you're wondering why we print \texttt{\textbackslash} with
+\verb|\textbackslash| instead of \verb|\\|\,,
+it's because the latter is the command to force a line break.
+\begin{leftfigure}
+\begin{lstlisting}
+Give me \\
+a brand new line!
+\end{lstlisting}
+\end{leftfigure}
+obeys:
+\begin{leftfigure}
+\lm Give me \\
+a brand new line!
+\end{leftfigure}
+Use this power sparingly---deciding how to elegantly break paragraphs into
+lines is one of \LaTeX{}'s greatest skills.
+
+\section{Environments}
+
+We often format text in \LaTeX{} by placing it in \introduce{environments}.
+These always start with \verb|\begin{name}| and conclude with \verb|\end{name}|,
+where \texttt{name} is that of the desired environment.
+Take the \texttt{quote} environment,
+which adds additional space on both sides of a block quotation:
+\begin{leftfigure}
+\begin{lstlisting}
+Donald Knuth once wrote,
+\begin{quote}
+We should forget about small efficiencies,
+say about 97\% of the time:
+premature optimization is the root of all evil.
+Yet we should not pass up our opportunities in
+that critical 3\%.
+\end{quote}
+\end{lstlisting}
+\end{leftfigure}
+produces
+\begin{leftfigure}
+\lm
+Donald Knuth once wrote,
+\begin{quote}
+We should forget about small efficiencies,
+say about 97\% of the time:
+premature optimization is the root of all evil.
+Yet we should not pass up our opportunities in
+that critical 3\%.
+\end{quote}
+\end{leftfigure}
+
+\section{Groups and command scope}
+Some commands change how \LaTeX{} sets the text that follows them.
+\verb|\itshape|, for example, \textit{italicizes} everything that comes after it.
+To limit a command's influence to a certain area, surround it with braces.
+\begin{leftfigure}
+\begin{lstlisting}
+{\itshape Sometimes we want italics}, but only sometimes.
+\end{lstlisting}
+\end{leftfigure}
+becomes
+\begin{leftfigure}
+\lm {\itshape Sometimes we want italics}, but only sometimes.
+\end{leftfigure}
+The braced region is called a \introduce{group},
+and commands placed inside a group lose their power once it ends.
+Environments also create their own groups:
+\begin{leftfigure}
+\begin{lstlisting}
+\begin{quote}
+\itshape If I italicize a quote, the following text will
+use upright type again.
+\end{quote}
+See? Back to normal.
+\end{lstlisting}
+\end{leftfigure}
+typesets
+\begin{leftfigure}
+\lm
+\begin{quote}
+\itshape If I italicize a quote, the following text will
+use upright type again.
+\end{quote}
+See? Back to normal.
+\end{leftfigure}
+Groups can also be used to handle the spacing oddities of zero-argument
+commands: some prefer \verb|{\LaTeX}| over \verb|\LaTeX{}|.

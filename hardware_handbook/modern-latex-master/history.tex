@@ -1,0 +1,143 @@
+\chapter{A Brief History of \texorpdfstring{\LaTeX}{LaTeX}}
+
+\label{history}
+
+Donald Knuth is celebrated among programmers as
+the man who coined the term \emph{analysis of algorithms}
+and pioneered many computer science fundamentals we use today.
+Knuth is perhaps most famous for his ongoing magnum opus,
+\textit{The~Art of Computer Programming}.
+
+When the first volume of \acronym{taocp} was released in 1968,
+it was printed the same way most books had been since the turn of the century:
+with \introduce{hot metal} type.
+Letters were cast from molten lead,
+then arranged into lines.
+These lines were clamped together to form pages,
+which were inked and pressed against paper.
+
+By March of 1977, Knuth was ready for a second run of \acronym{taocp}, volume~2,
+but he was horrified when he received the proofs.
+Hot metal typesetting was expensive, complicated, and time-consuming,
+so publishers had replaced it with phototypesetting,
+which works by projecting images of characters onto film.
+The new technology, while much cheaper and faster,
+didn't provide the quality Knuth
+expected.\punckern\endnote{Knuth, \textit{Digital Typography} (Stanford, 1999), 3--5}
+
+The average author would have resigned themselves to this change and moved on,
+but Knuth took great pride in his books' appearances,
+especially for their mathematics.
+Around this time, he also discovered the growing field of digital typesetting,
+where glyphs are built from tiny dots,
+packed together at over 1,000 per inch.
+Inspired,
+Knuth set off on one of the greatest yak shaves\footnote{Programmers
+call seemingly unrelated work needed to solve their main problem
+``yak shaving''\quotekern. The phrase is thought to originate from an episode
+of \textit{The Ren~\&~Stimpy Show}.\punckern\endnote{``yak shaving''\quotekern,
+\textit{The Jargon File},
+\href{http://www.catb.org/~esr/jargon/html/Y/yak-shaving.html}%
+{\texttt{www.catb.org/\~{}esr/jargon/html/Y/yak-shaving.html}}}}
+of all time.
+For years, he paused work on his books to create his own
+typesetting system.
+When the dust settled in 1978, he had the first version of
+\TeX.\punckern\footnote{The name ``\TeX{}'' comes from the Greek
+{\fontspec[Scale=MatchLowercase]{NotoSerif-Medium}τέχνη},
+meaning \introduce{art} or \introduce{craft}.\punckern\endnote{Knuth,
+\textit{The \TeX book}, 1}}
+
+It's hard to appreciate how much of a revolution \TeX{} was,
+especially looking back from a time where anybody with a copy
+of Word can be their own desktop publisher.
+Adobe's \acronym{pdf} wouldn't exist for another decade, so Knuth
+and his graduate students devised their own device-independent format,
+\acronym{dvi}.
+Scalable fonts were uncommon, so he created \MF{} to rasterize glyphs
+into dots on the page.
+Perhaps most importantly, Knuth and his students designed algorithms
+to automatically hyphenate and justify text into
+beautifully-typeset paragraphs.\punckern\footnote{These same algorithms went
+on to influence the ones Adobe uses in its software today.\punckern\endnote{%
+Several sources (\http{www.tug.org/whatis.html},
+\https{tug.org/interviews/thanh.html},
+\http{www.typophile.com/node/34620})
+mention \TeX's influence on the \textit{hz}-program by Peter Karow
+and Hermann Zapf, thanks to via Knuth's collaborations with Zapf.
+\textit{hz} was later acquired by Adobe and used
+when creating InDesign's paragraph formatting systems.}}
+
+\LaTeX{}, short for Lamport~\TeX{}, was later developed by Leslie Lamport
+as a set of commands for common document layouts.
+It was introduced in 1986 with his guide,
+\textit{\LaTeX: A~Document Preparation System}.
+Other typesetting systems based on \TeX{} also exist,
+the other most popular today being Con\TeX{}t.
+
+Development continues today,
+both in the form of user-provided packages for \TeX{} and \LaTeX{},
+and as improvements to the \TeX{} typesetting program itself.
+There are four versions, or \introduce{engines}:
+\begin{description}
+\item[\TeX] is the original system by Donald Knuth.
+Knuth stopped adding features after version 3.0 in March~1990,
+and all subsequent releases have contained only bug fixes.
+With each release, the version number asymptotically approaches $\pi$
+by adding an additional digit.
+The most recent version, 3.14159265, came out in January~2014.
+
+\item[pdf\TeX] is an extension of \TeX{} that provides direct \acronym{pdf}
+    output (instead of \TeX's \acronym{dvi}),
+    native support for PostScript
+    and TrueType fonts,
+    and micro-typographic features discussed in \chapref{microtype}.
+    It was originally developed by
+    Hàn Thế Thành
+    as part of his PhD thesis
+    for Masaryk University in Brno, Czech Republic.\punckern\endnote{%
+    Hàn Thế Thành,
+    \textit{Micro-typographic extensions to the \TeX{} typesetting system}
+    (Masaryk University Brno, October 2000)}
+
+\item[\XeTeX] is a further extension of \TeX{} that adds native support for
+    Unicode and OpenType.
+    It was originally developed by Jonathan Kew in the early 2000s,
+    and gained full cross-platform support in 2007.\punckern\endnote{Jonathan Kew,
+    ``\XeTeX{} Live''\quotekern, \textit{TUGboat} 29, no.~1 (2007)}
+
+\item[\LuaTeX] is similar to \XeTeX{} in its native Unicode and modern font support.
+    It also embeds the Lua scripting language into the engine,
+    exposing an interface for package and document authors.
+    It first appeared in 2007 and is developed by a core team of
+    Hans Hagen, Hartmut Henkel, Taco Hoekwater,
+    and Luigi Scarso.\punckern\endnote{\http{www.luatex.org}}
+\end{description}
+
+Building \TeX{} today is an\dots{} interesting endeavor.
+When it was written in the late 1970s,
+there were no large, well-documented, open-source projects for students to study,
+so Knuth set out to make \TeX{} into one.
+As part of this effort, \TeX{} was written in a style he calls
+\introduce{literate programming}: opposite most programs---where
+documentation is interspersed throughout the code---Knuth wrote \TeX{} as a book,
+with the code inserted between paragraphs.
+This mix of English and code is called \texttt{WEB}.\punckern\footnote{Knuth
+also released a pair of companion programs named
+\texttt{TANGLE} and \texttt{WEAVE}.
+The former extracts the book---as \TeX, of course---and the latter
+produces \TeX's Pascal source code.}
+
+Unsurprisingly, most modern systems don't have good tooling for the late 1970s
+dialect of Pascal that \TeX{} was written in,
+so present-day distributions use another program,
+\texttt{web2c}, to convert its \texttt{WEB} source into C code.
+pdf\TeX{} and \XeTeX{} are built by combining the result with other C
+and \cpp{} sources.
+Instead of taking this complicated approach,
+the \LuaTeX{} authors hand-translated Knuth's Pascal into C.
+They have used the resulting code since 2009.\punckern\endnote{%
+Taco Hoekwater, \textit{\LuaTeX{} says goodbye to Pascal}
+(MAPS 39, Euro\TeX{} 2009),
+\https{www.tug.org/TUGboat/tb30-3/tb96hoekwater-pascal.pdf}}
+

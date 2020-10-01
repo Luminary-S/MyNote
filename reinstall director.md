@@ -117,6 +117,8 @@ NOTE: if TOC not automatically changes line, set EOL to \r\n in setting
    ```
 6. rtorrent torrent download: ```sudo apt install rtorrent```
 7. Indicator Stickynotes (desktop stickynotes)
+8. [Xmind8](https://www.xmind.cn/download/xmind8/) and [install crack tutorial](https://www.jianshu.com/p/9d93b1754549)
+9. 词典goldendict, `sudo apt-get install goldendict`, add off-line dict files:[dict website](http://download.huzheng.org/zh_CN/); [reference](https://blog.csdn.net/clksjx/article/details/85052248); youdao dict online website: http://dict.youdao.com/search?q=%GDWORD%&ue=utf8&keyfrom=web.index
 
 ## 2.6. **ROS**
 ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
