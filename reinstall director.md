@@ -1,6 +1,48 @@
 Ubuntu 18.04 in Windows 10 two systems 
 ====
-<!-- TOC -->autoauto- [1. Install](#1-install)auto- [2. necessary software install](#2-necessary-software-install)auto    - [2.1. **Terminator**](#21-terminator)auto    - [2.2. **Sogou Pinyin**](#22-sogou-pinyin)auto    - [2.3. **other Font install**](#23-other-font-install)auto    - [2.4. **VS Code**](#24-vs-code)auto    - [2.5. **Common Tools**](#25-common-tools)auto    - [2.6. **ROS**](#26-ros)auto    - [2.7. **Qt**](#27-qt)auto        - [2.7.1. reference](#271-reference)auto        - [2.7.2. download](#272-download)auto        - [2.7.3. installation](#273-installation)auto    - [2.8. **Opencv**](#28-opencv)auto        - [2.8.1. reference](#281-reference)auto        - [2.8.2. download](#282-download)auto        - [2.8.3. install](#283-install)auto        - [2.8.4. NOTE](#284-note)auto        - [2.8.5. installation](#285-installation)auto    - [2.9. **pdf reader**](#29-pdf-reader)auto    - [2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)auto        - [2.10.1. Content](#2101-content)auto        - [2.10.2. reference](#2102-reference)auto        - [2.10.3. download](#2103-download)auto        - [2.10.4. installation](#2104-installation)auto            - [cuda and nvidia](#cuda-and-nvidia)auto            - [cudnn](#cudnn)auto            - [pycuda](#pycuda)auto            - [tensorflow-gpu](#tensorflow-gpu)auto- [3. unnecessary software install](#3-unnecessary-software-install)auto    - [3.1. **Matlab 2018a**](#31-matlab-2018a)auto    - [3.2. **PyQt5, python3 pycharm**](#32-pyqt5-python3-pycharm)auto    - [3.3. **Pycharm**](#33-pycharm)auto    - [3.4. **eric**](#34-eric)auto    - [3.5. **java**](#35-java)auto    - [3.6. **arduino**](#36-arduino)auto    - [3.7. **Vrep**](#37-vrep)auto    - [3.8. **SIMPACK**](#38-simpack)auto    - [3.9. **latex in vs code and beamer**](#39-latex-in-vs-code-and-beamer)autoauto<!-- /TOC -->
+<!-- TOC -->
+
+- [Ubuntu 18.04 in Windows 10 two systems](#ubuntu-1804-in-windows-10-two-systems)
+- [1. Install](#1-install)
+- [2. necessary software install](#2-necessary-software-install)
+  - [2.1. **Terminator**](#21-terminator)
+  - [2.2. **Sogou Pinyin**](#22-sogou-pinyin)
+  - [2.3. **other Font install**](#23-other-font-install)
+  - [2.4. **VS Code**](#24-vs-code)
+  - [2.5. **Common Tools**](#25-common-tools)
+  - [2.6. **ROS**](#26-ros)
+  - [2.7. **Qt**](#27-qt)
+    - [2.7.1. reference](#271-reference)
+    - [2.7.2. download](#272-download)
+    - [2.7.3. installation](#273-installation)
+  - [2.8. **Opencv**](#28-opencv)
+    - [2.8.1. reference](#281-reference)
+    - [2.8.2. download](#282-download)
+    - [2.8.3. install](#283-install)
+    - [2.8.4. NOTE](#284-note)
+    - [2.8.5. installation](#285-installation)
+  - [2.9. **pdf reader**](#29-pdf-reader)
+  - [2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)
+    - [2.10.1. Content](#2101-content)
+    - [2.10.2. reference](#2102-reference)
+    - [2.10.3. download](#2103-download)
+    - [2.10.4. installation](#2104-installation)
+      - [cuda and nvidia](#cuda-and-nvidia)
+      - [cudnn](#cudnn)
+      - [pycuda](#pycuda)
+      - [tensorflow-gpu](#tensorflow-gpu)
+- [3. unnecessary software install](#3-unnecessary-software-install)
+  - [3.1. **Matlab 2018a**](#31-matlab-2018a)
+  - [3.2. **PyQt5, python3 pycharm**](#32-pyqt5-python3-pycharm)
+  - [3.3. **Pycharm**](#33-pycharm)
+  - [3.4. **eric**](#34-eric)
+  - [3.5. **java**](#35-java)
+  - [3.6. **arduino**](#36-arduino)
+  - [3.7. **Vrep**](#37-vrep)
+  - [3.8. **SIMPACK**](#38-simpack)
+  - [3.9. **latex in vs code and beamer**](#39-latex-in-vs-code-and-beamer)
+
+<!-- /TOC -->
 
 
 # 1. Install
@@ -11,12 +53,12 @@ Ubuntu 18.04 in Windows 10 two systems
    - Be careful about the disk partition when you install
    - suggest partition plan: 
    
-   | 目录  | 类型     | 文件类别   | 大小                  |
-   | ----- | -------- | ---------- | --------------------- |
-   | /     | 主分区   | EXT4       | 30GB                  |
-   | /swap | 逻辑分区 | swap space | 4GB                   |
-   | /boot | 逻辑分区 | EXT4       | 300MB                 |
-   | /home | 逻辑分区 | EXT4       | 剩余（at least 50GB） |
+   | 目录  | 类型     | 文件类别   | 大小                          |
+   | ----- | -------- | ---------- | ----------------------------- |
+   | /     | 主分区   | EXT4       | 30GB                          |
+   | /swap | 逻辑分区 | swap space | 4GB        2倍内存            |
+   | /boot | 逻辑分区 | EXT4       | 300MB        至少200，我用1GB |
+   | /home | 逻辑分区 | EXT4       | 剩余（at least 50GB）         |
 
     - install the bootloader in the /boot disk( carefully choose that )
 5. 启动系统，在进入Grub界面时，按e键，进入编辑页面，在倒数第二行中，ro quiet splash后面添加nomodeset，这样进入系统后不会因为独显驱动问题而导致黑屏了或者界面卡死；在进入系统后，编辑文件/boot/grub/grub.cfg文件，搜索ro quiet splash关键词，同样追加nomodeset，然后 sudo update-grub, 这样不用每次启动系统前重复上述步骤了。
@@ -106,6 +148,20 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
     sudo rosdep init
     rosdep update
     ```
+```
+     关于ros安装过程中出现rosdep init ERROR: cannot download default sources list from:解决方法
+
+1、打开terminal控制台，输入：sudo nano /etc/hosts 
+
+      这个命令中的nano是文本编辑器，也可以用vim、gedit等打开；
+
+2、在打开的文件末尾一行添加： 151.101.84.133 raw.githubusercontent.com
+
+3、保存退出，在terminal中输入： sudo rosdep init
+
+4、执行完输入：rosdep update即可
+
+```
    2. Environment setup
    
     ```bash
