@@ -188,6 +188,9 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
    ```bash
     echo $ROS_PACKAGE_PATH
     /home/youruser/catkin_ws/src:/opt/ros/kinetic/share
+    方法如下：
+    1、打开终端脚本～/.bashrc文件：$sudo gedit ~/.bashrc
+    2、在文件末尾添加export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:/你的工作空间路径/src
    ```
 5. Test
    1. 打开Termial，输入以下命令，初始化ROS环境：roscore

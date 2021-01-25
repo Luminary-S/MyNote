@@ -1,21 +1,26 @@
-# 1. git use roadmap 
+git use roadmap 
+-----------
 <!-- TOC -->
 
-- [1. git use roadmap](#1-git-use-roadmap)
-  - [1.1. git daily ops, update remote repository](#11-git-daily-ops-update-remote-repository)
-  - [1.2. git-ssh 配置](#12-git-ssh-%E9%85%8D%E7%BD%AE)
-  - [1.3. relate local git repository to remote repository](#13-relate-local-git-repository-to-remote-repository)
-  - [1.4. gitignore 文件 编写方法](#14-gitignore-%E6%96%87%E4%BB%B6-%E7%BC%96%E5%86%99%E6%96%B9%E6%B3%95)
-  - [1.5. 在git conf 中配置username](#15-%E5%9C%A8git-conf-%E4%B8%AD%E9%85%8D%E7%BD%AEusername)
-  - [1.6. git 中删除文件](#16-git-%E4%B8%AD%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6)
-  - [1.7. 不小心误删除](#17-%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%AF%AF%E5%88%A0%E9%99%A4)
-  - [1.8. git tag](#18-git-tag)
-    - [1.8.1. 创建tag](#181-%E5%88%9B%E5%BB%BAtag)
-    - [1.8.2. 查看tag](#182-%E6%9F%A5%E7%9C%8Btag)
+- [1. git daily ops, update remote repository](#1-git-daily-ops-update-remote-repository)
+- [2. git-ssh 配置](#2-git-ssh-配置)
+- [3. relate local git repository to remote repository](#3-relate-local-git-repository-to-remote-repository)
+- [4. gitignore 文件 编写方法](#4-gitignore-文件-编写方法)
+- [5. 在git conf 中配置username](#5-在git-conf-中配置username)
+  - [5.1. git 中删除文件](#51-git-中删除文件)
+  - [5.2. 不小心误删除](#52-不小心误删除)
+- [6. git tag](#6-git-tag)
+  - [6.1. 创建tag](#61-创建tag)
+  - [6.2. 查看tag](#62-查看tag)
+- [7. git branch](#7-git-branch)
+  - [7.1. 查看远程所有分支](#71-查看远程所有分支)
+  - [7.2. 新建分支并切换到指定分支](#72-新建分支并切换到指定分支)
+  - [7.3. 查看本地分支及追踪的分支](#73-查看本地分支及追踪的分支)
+  - [7.4. 将本地分支推送到远程](#74-将本地分支推送到远程)
 
 <!-- /TOC -->
 
-## 1.1. git daily ops, update remote repository
+# 1. git daily ops, update remote repository
 1. check code status
 ```
 git status
@@ -36,7 +41,7 @@ git pull
 ``` 
 git push origin master 
 ```
-## 1.2. git-ssh 配置
+# 2. git-ssh 配置
 refer: https://segmentfault.com/a/1190000002645623
 1. 设置Git的user name和email：
 ```
@@ -60,7 +65,7 @@ ssh -T git@github.com
 6. 后面就可以进行 [git daily ops, update remote repository](#git-daily-ops-update-remote-repository)
 
 
-## 1.3. relate local git repository to remote repository
+# 3. relate local git repository to remote repository
    refer: [上传本地代码及更新代码到github教程](https://www.cnblogs.com/zlxbky/p/7727895.html)
 1. go to github website, login in and create remote Repository, sample name is : MyNote, then your repository link should be: 
    https://github.com/Luminary-S/MyNote.git
@@ -74,9 +79,7 @@ ssh -T git@github.com
 9. ```git push -u origin master``` # push code to remote
 
 
-
-
-## 1.4. gitignore 文件 编写方法
+# 4. gitignore 文件 编写方法
 refer: [Git ignore文件的设置](https://www.jianshu.com/p/267cd94f1d49)
 ```
 # 以#开头的行都是注释
@@ -102,7 +105,7 @@ somepath
 /somepath
 ``` 
 
-## 1.5. 在git conf 中配置username
+# 5. 在git conf 中配置username
 refer: https://blog.csdn.net/qq_15437667/article/details/51029757
 1. 全局的conf 在 ～/.gitconfig, local repository 的在相应的文件夹下的 ./.git/conf 文件中
 2. 添加的内容
@@ -118,26 +121,26 @@ email=用户邮箱
     fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
-## 1.6. git 中删除文件
+## 5.1. git 中删除文件
 在git中删除, 只删除文件在git记录，不删除文件
 ```git
 git rm --local  filename
 ```
 
-## 1.7. 不小心误删除
+## 5.2. 不小心误删除
 只要git 里面有记录可以， 如下可以还原test.txt文件
 ```
 git checkout -- test.txt
 ```
 
-## 1.8. git tag
+# 6. git tag
 refer: [git tag 用法](https://www.cnblogs.com/senlinyang/p/8527764.html)
-### 1.8.1. 创建tag
+## 6.1. 创建tag
 ```
 git tag -a V1.2 -m 'release 1.2'
 ```
 上面的命令我们成功创建了本地一个版本 V1.2 ,并且添加了附注信息 'release 1.2'
-### 1.8.2. 查看tag
+## 6.2. 查看tag
 ```
 git tag
 ```
@@ -162,3 +165,59 @@ git push origin :refs/tags/V1.2
 git fetch origin tag V1.2
 ```
 这样我们可以精准拉取指定的某一个版本.适用于运维同学部署指定版本.
+
+# 7. git branch
+git切换到指定远程分支
+
+## 7.1. 查看远程所有分支
+
+$ git branch -a
+
+
+git branch不带参数,列出本地已经存在的分支，并且在当前分支的前面用*标记，加上-a参数可以查看所有分支列表，包括本地和远程，远程分支一般会用红色字体标记出来
+
+```
+* dev
+ master
+ remotes/origin/HEAD -> origin/master
+ remotes/origin/master
+ remotes/origin/release/caigou_v1.0
+
+```
+
+## 7.2. 新建分支并切换到指定分支
+
+```
+git checkout -b dev origin/release/caigou_v1.0
+git checkout -b 本地分支名 origin/远程分支名
+
+```
+该命令可以将远程git仓库里的指定分支拉取到本地，这样就在本地新建了一个dev分支，并和指定的远程分支release/caigou_v1.0关联了起来。
+
+Switched to a new branch 'dev'
+Branch 'dev' set up to track remote branch 'release/caigou_v1.0' from 'origin'.
+
+## 7.3. 查看本地分支及追踪的分支
+
+```
+ git branch -vv
+
+```
+git branch -vv命令可以显示本地所有分支，执行结果如下：
+
+```
+* dev    e67e3ef [origin/release/caigou_v1.0] 供应商详情页面
+ master 11160c2 [origin/master: behind 5] Merge branch 'master' of https://git.jointforce.com/scm/join/yj-stat
+
+
+```   
+*表示当前所在分支，[远程分支]表示当前本地分支追踪的远程分支，最后一个是最近一次提交的注释。
+
+## 7.4. 将本地分支推送到远程
+
+```
+ git push -u origin dev:release/caigou_v1.0
+
+ git push <远程主机名> <本地分支名>:<远程分支名>
+
+```
