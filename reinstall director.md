@@ -200,7 +200,7 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
    4. 打开新的Termial，输入以下命令，弹出新的窗口查看ROS节点信息：rosrun rqt_graph rqt_graph
 6. compile, catkin_make
     ```bash
-    sudo apt-get install ros-melodic-moveit ros-melodic-visp ros-melodic-urdfdom-py ros-melodic-ros-control ros-melodic-ros-type-introspection ros-melodic-rosserial ros-melodic-serial ros-melodic-joint-trajectory-controller ros-melodic-plotjuggler 
+    sudo apt-get install ros-melodic-moveit ros-melodic-visp ros-melodic-urdfdom-py ros-melodic-ros-control ros-melodic-ros-type-introspection ros-melodic-rosserial ros-melodic-serial ros-melodic-joint-trajectory-controller ros-melodic-plotjuggler  ros-melodic-
     ```
     + [ros-industrial/universal_robot](https://github.com/ros-industrial/universal_robot/tree/melodic-devel)下载对应版本的universal_robot package
     + install  plotjuggler: sudo apt-get install ros-melodic-plotjuggler 
@@ -262,7 +262,8 @@ START:
     ```bash
         cmake -D CMAKE_BUILD_TYPE=Release \
             -D CMAKE_INSTALL_PREFIX=/usr/local \
-            -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.5/modules/ \
+            -D OPENCV_EXTRA_MODULES_PATH=/home/sgl/opencv/opencv_contrib-3.4.6/modules/ \
+            -D BUILD_EXAMPLES=ON \
             -D CUDA_GENERATION=Kepler ..      
     ```
 3. make install
@@ -295,7 +296,15 @@ START:
 ## 2.9. **pdf reader**
 1. recommend [master-pdf-editor](https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb)(careful about qt version, active code: AZQWS_XEDC5_RFVT6-BY7G6-5DCSX), Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
 2. download [Foxcit Reader](https://www.foxitsoftware.cn/downloads/), automatically choose the version for your computer system.
-3. chmod of run file and sudo ./*.run if you want to install it for all files
+3. download master pdf editor
+   ```
+   wget https://code-industry.net/public/master-pdf-editor-5.4.38-qt5.amd64.deb
+   sudo dpkg -i master-pdf-editor-5.4.38-qt5.amd64.deb
+   offline activation , copy ID and using [key-gen.exe](https://blog.csdn.net/qq_40623536/article/details/105601872) in windows
+   UKH4RXVO2ZMCQEZL3A
+Activation Code..: E18F11DDDD91759009536C6D4272680B013011EEL8PU0YU15V
+   ```
+4. chmod of run file and sudo ./*.run if you want to install it for all files
 
 
 ## 2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**
