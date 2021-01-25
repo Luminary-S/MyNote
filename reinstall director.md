@@ -1,48 +1,6 @@
 Ubuntu 18.04 in Windows 10 two systems 
 ====
-<!-- TOC -->
-
-- [Ubuntu 18.04 in Windows 10 two systems](#ubuntu-1804-in-windows-10-two-systems)
-- [1. Install](#1-install)
-- [2. necessary software install](#2-necessary-software-install)
-  - [2.1. **Terminator**](#21-terminator)
-  - [2.2. **Sogou Pinyin**](#22-sogou-pinyin)
-  - [2.3. **other Font install**](#23-other-font-install)
-  - [2.4. **VS Code**](#24-vs-code)
-  - [2.5. **Common Tools**](#25-common-tools)
-  - [2.6. **ROS**](#26-ros)
-  - [2.7. **Qt**](#27-qt)
-    - [2.7.1. reference](#271-reference)
-    - [2.7.2. download](#272-download)
-    - [2.7.3. installation](#273-installation)
-  - [2.8. **Opencv**](#28-opencv)
-    - [2.8.1. reference](#281-reference)
-    - [2.8.2. download](#282-download)
-    - [2.8.3. install](#283-install)
-    - [2.8.4. NOTE](#284-note)
-    - [2.8.5. installation](#285-installation)
-  - [2.9. **pdf reader**](#29-pdf-reader)
-  - [2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)
-    - [2.10.1. Content](#2101-content)
-    - [2.10.2. reference](#2102-reference)
-    - [2.10.3. download](#2103-download)
-    - [2.10.4. installation](#2104-installation)
-      - [cuda and nvidia](#cuda-and-nvidia)
-      - [cudnn](#cudnn)
-      - [pycuda](#pycuda)
-      - [tensorflow-gpu](#tensorflow-gpu)
-- [3. unnecessary software install](#3-unnecessary-software-install)
-  - [3.1. **Matlab 2018a**](#31-matlab-2018a)
-  - [3.2. **PyQt5, python3 pycharm**](#32-pyqt5-python3-pycharm)
-  - [3.3. **Pycharm**](#33-pycharm)
-  - [3.4. **eric**](#34-eric)
-  - [3.5. **java**](#35-java)
-  - [3.6. **arduino**](#36-arduino)
-  - [3.7. **Vrep**](#37-vrep)
-  - [3.8. **SIMPACK**](#38-simpack)
-  - [3.9. **latex in vs code and beamer**](#39-latex-in-vs-code-and-beamer)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [1. Install](#1-install)auto- [2. necessary software install](#2-necessary-software-install)auto    - [2.1. **Terminator**](#21-terminator)auto    - [2.2. **Sogou Pinyin**](#22-sogou-pinyin)auto    - [2.3. **other Font install**](#23-other-font-install)auto    - [2.4. **VS Code**](#24-vs-code)auto    - [2.5. **Common Tools**](#25-common-tools)auto    - [2.6. **ROS**](#26-ros)auto    - [2.7. **Qt**](#27-qt)auto        - [2.7.1. reference](#271-reference)auto        - [2.7.2. download](#272-download)auto        - [2.7.3. installation](#273-installation)auto    - [2.8. **Opencv**](#28-opencv)auto        - [2.8.1. reference](#281-reference)auto        - [2.8.2. download](#282-download)auto        - [2.8.3. install](#283-install)auto        - [2.8.4. NOTE](#284-note)auto        - [2.8.5. installation](#285-installation)auto    - [2.9. **pdf reader**](#29-pdf-reader)auto    - [2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)auto        - [2.10.1. Content](#2101-content)auto        - [2.10.2. reference](#2102-reference)auto        - [2.10.3. download](#2103-download)auto        - [2.10.4. installation](#2104-installation)auto            - [cuda and nvidia](#cuda-and-nvidia)auto            - [cudnn](#cudnn)auto            - [pycuda](#pycuda)auto            - [tensorflow-gpu](#tensorflow-gpu)auto- [3. unnecessary software install](#3-unnecessary-software-install)auto    - [3.1. **Matlab 2018a**](#31-matlab-2018a)auto    - [3.2. **PyQt5, python3 pycharm**](#32-pyqt5-python3-pycharm)auto    - [3.3. **Pycharm**](#33-pycharm)auto    - [3.4. **eric**](#34-eric)auto    - [3.5. **java**](#35-java)auto    - [3.6. **arduino**](#36-arduino)auto    - [3.7. **Vrep**](#37-vrep)auto    - [3.8. **SIMPACK**](#38-simpack)auto    - [3.9. **latex in vs code and beamer**](#39-latex-in-vs-code-and-beamer)autoauto<!-- /TOC -->
 
 
 # 1. Install
@@ -78,6 +36,7 @@ Ubuntu 18.04 in Windows 10 two systems
 refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8a2180e)  and  [Ubuntu14.04.2安装搜狗输入法](https://blog.csdn.net/q1302182594/article/details/47068641)
 1. download: [sogou pinyin linux]( https://pinyin.sogou.com/linux/?r=pinyin )
 2. install deb package: ```dpkg -i sougou****.deb ```
+3. change to Chinese language in system setting if sogou pinyin is not activated
 
 ## 2.3. **other Font install**
 1. pls refer to [ font install ]( https://blog.csdn.net/bitcarmanlee/article/details/79729634 )
