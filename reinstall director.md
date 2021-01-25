@@ -11,26 +11,29 @@ Ubuntu 18.04 in Windows 10 two systems
   - [2.4. **VS Code**](#24-vs-code)
   - [2.5. **Common Tools**](#25-common-tools)
   - [2.6. **ROS**](#26-ros)
-  - [2.7. **Qt**](#27-qt)
+  - [2.7. **GTSAM**](#27-gtsam)
     - [2.7.1. reference](#271-reference)
-    - [2.7.2. download](#272-download)
-    - [2.7.3. installation](#273-installation)
-  - [2.8. **Opencv**](#28-opencv)
+    - [2.7.2. install](#272-install)
+  - [2.8. **Qt**](#28-qt)
     - [2.8.1. reference](#281-reference)
     - [2.8.2. download](#282-download)
-    - [2.8.3. install](#283-install)
-    - [2.8.4. NOTE](#284-note)
-    - [2.8.5. installation](#285-installation)
-  - [2.9. **pdf reader**](#29-pdf-reader)
-  - [2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#210-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)
-    - [2.10.1. Content](#2101-content)
-    - [2.10.2. reference](#2102-reference)
-    - [2.10.3. download](#2103-download)
-    - [2.10.4. installation](#2104-installation)
-      - [cuda and nvidia](#cuda-and-nvidia)
-      - [cudnn](#cudnn)
-      - [pycuda](#pycuda)
-      - [tensorflow-gpu](#tensorflow-gpu)
+    - [2.8.3. installation](#283-installation)
+  - [2.9. **Opencv**](#29-opencv)
+    - [2.9.1. reference](#291-reference)
+    - [2.9.2. download](#292-download)
+    - [2.9.3. install](#293-install)
+    - [2.9.4. NOTE](#294-note)
+    - [2.9.5. installation](#295-installation)
+  - [2.10. **pdf reader**](#210-pdf-reader)
+  - [2.11. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**](#211-nvidia-driver-and-cuda-and-cudnn-pycuda-tensorflow-gpu)
+    - [2.11.1. Content](#2111-content)
+    - [2.11.2. reference](#2112-reference)
+    - [2.11.3. download](#2113-download)
+    - [2.11.4. installation](#2114-installation)
+      - [2.11.4.1. cuda and nvidia](#21141-cuda-and-nvidia)
+      - [2.11.4.2. cudnn](#21142-cudnn)
+      - [2.11.4.3. pycuda](#21143-pycuda)
+      - [2.11.4.4. tensorflow-gpu](#21144-tensorflow-gpu)
 - [3. unnecessary software install](#3-unnecessary-software-install)
   - [3.1. **Matlab 2018a**](#31-matlab-2018a)
   - [3.2. **PyQt5, python3 pycharm**](#32-pyqt5-python3-pycharm)
@@ -212,16 +215,46 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
 
         ```
 
-## 2.7. **Qt**
+## 2.7. **GTSAM**
 ### 2.7.1. reference
+1.  [get started](https://gtsam.org/get_started/)
+2.  [api page](https://gtsam.org/doxygen/pages.html)
+3.  [org notes](https://gtsam.org/notes/GTSAM-Concepts.html)
+4.  [gtsam 的使用](https://blog.csdn.net/MissileDefense/article/details/56319421)
+
+### 2.7.2. install 
+Install GTSAM from Ubuntu PPA
+
+GTSAM can be installed on Ubuntu via these PPA repositories as well. At present (Nov 2020), packages for Xenial (u16.04), Bionic (u18.04), and Focal (u20.04) are published.
+Add PPA for GTSAM nightly builds (develop branch)
+
+    ```
+    # Add PPA
+    sudo add-apt-repository ppa:borglab/gtsam-develop
+    sudo apt update  # not necessary since Bionic
+    #Install:
+    sudo apt install libgtsam-dev libgtsam-unstable-dev
+
+    Add PPA for the latest GTSAM 4.x stable release
+
+    #Add PPA
+    sudo add-apt-repository ppa:borglab/gtsam-release-4.0
+    sudo apt update  # not necessary since Bionic
+    # Install:
+    sudo apt install libgtsam-dev libgtsam-unstable-dev
+
+    ```
+
+## 2.8. **Qt**
+### 2.8.1. reference
 1. [install qt](https://wiki.qt.io/Install_Qt_5_on_Ubuntu) 
 2. [install blog](https://blog.csdn.net/wuweifeng_2017/article/details/78322249) 
 3. [configuration](https://www.helplib.com/ubuntu/article_170121) 
 4. [install qt ros package](https://blog.csdn.net/u010925447/article/details/81702166)
-### 2.7.2. download
+### 2.8.2. download
 1. link: [qt](http://download.qt.io/official_releases/qt/) 
 2. acc: ustc 163; pwd:Sgl 
-### 2.7.3. installation
+### 2.8.3. installation
 1. just tar xvf file, and run
 2. path configuration
    1. 在命令端口中输入命令：sudo vim /usr/lib/x86_64-linux-gnu/qt-default/qtchooser/default.conf  打开default.conf文件。
@@ -238,21 +271,21 @@ ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
     ```
 3. default desktop icon change, pls refer to the qt official website
 
-## 2.8. **Opencv**
+## 2.9. **Opencv**
 NOTE: 下载版本一致的opencv 和 opencv_contrib
-### 2.8.1. reference
+### 2.9.1. reference
 1. [Ubuntu14.04 Opencv3.3.0 安装配置及测试](https://blog.csdn.net/lgh0824/article/details/78487234)
 2. [ubuntu16.04安装opencv3.4.1教程](https://blog.csdn.net/cocoaqin/article/details/78163171)
 3. [Install OpenCV 3.0 and Python 3.4+ on Ubuntu](https://www.pyimagesearch.com/2015/07/20/install-opencv-3-0-and-python-3-4-on-ubuntu/)
 4. [Ubuntu 16.04: How to install OpenCV](https://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/)
 
-### 2.8.2. download
+### 2.9.2. download
 
 1. [opencv3.4.6](https://opencv.org/releases/), download source file
 2. [opencv_contrib-3.4.6](https://codeload.github.com/opencv/opencv_contrib/zip/3.4.6)
 3. [opencv_contrib 下载驿站（百度云盘下载）](https://blog.csdn.net/weijifen000/article/details/87904707), all opencv_contrib version in baidu disk, since github is so slow!!!!
 
-### 2.8.3. install
+### 2.9.3. install
 START:
 1. create build folder:
     ```bash
@@ -273,13 +306,13 @@ START:
 4. revise ldconfig, refer to reference 1
 5. change cv2.so , refer to referecne 3
 
-### 2.8.4. NOTE
+### 2.9.4. NOTE
 1. in-source builds are not allowed, ```rm CMakeCache.txt```   
 2. [安装OpenCV时提示缺少boostdesc_bgm.i文件的问题解决方案（附带资源）](https://blog.csdn.net/AlexWang30/article/details/99612188)
 3. [libcudnn.so.7 is not a symbolic link](https://www.jianshu.com/p/b308d3bbde8a)
 4. [No module named load_config_py2问题解决](https://blog.csdn.net/XindaBlack/article/details/102613017),找到__init__.py的位置，修改43行，load py2的方式改的和load py3 一样即可
 
-### 2.8.5. installation
+### 2.9.5. installation
 
 1. check opencv version:
    
@@ -293,7 +326,7 @@ START:
     cv2.__version__
    ```
 
-## 2.9. **pdf reader**
+## 2.10. **pdf reader**
 1. recommend [master-pdf-editor](https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb)(careful about qt version, active code: AZQWS_XEDC5_RFVT6-BY7G6-5DCSX), Foxcit Reade; also **okular** is simple and useful,apt-get can be obtain.
 2. download [Foxcit Reader](https://www.foxitsoftware.cn/downloads/), automatically choose the version for your computer system.
 3. download master pdf editor
@@ -301,13 +334,11 @@ START:
    wget https://code-industry.net/public/master-pdf-editor-5.4.38-qt5.amd64.deb
    sudo dpkg -i master-pdf-editor-5.4.38-qt5.amd64.deb
    offline activation , copy ID and using [key-gen.exe](https://blog.csdn.net/qq_40623536/article/details/105601872) in windows
-   UKH4RXVO2ZMCQEZL3A
-Activation Code..: E18F11DDDD91759009536C6D4272680B013011EEL8PU0YU15V
    ```
 4. chmod of run file and sudo ./*.run if you want to install it for all files
 
 
-## 2.10. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**
+## 2.11. **NVIDIA driver and CUDA and Cudnn, pycuda, tensorflow-gpu**
 >environment and target: \
 >laptop: alienware 15R3 \
 >CPU: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz 8 cores \
@@ -319,7 +350,7 @@ Activation Code..: E18F11DDDD91759009536C6D4272680B013011EEL8PU0YU15V
 >pycuda:2019.1.2 \
 >tensorflow: 2.0.0b1 
 
-### 2.10.1. Content
+### 2.11.1. Content
 - [1. reference](#2102-reference)
 - [2. download ](#2103-download )
 - [3. cuda install ](#cuda-and-nvidia )
@@ -329,7 +360,7 @@ Activation Code..: E18F11DDDD91759009536C6D4272680B013011EEL8PU0YU15V
 
 NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱动，安装了还会有版本不和的问题， cuda runfile 后面带如：440_33 的就是nvidia driver的版本号
 
-### 2.10.2. reference
+### 2.11.2. reference
 1. [Ubuntu 14.04 上安装 CUDA 7.5/8.0 超详细教程](https://blog.csdn.net/masa_fish/article/details/51882183)
 2. [Ubuntu 16.04 安装 CUDA10.1 （解决循环登陆的问题）](https://www.cnblogs.com/dinghongkai/p/11268976.html)
 3. [cuda installation guide linux official](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile)
@@ -342,7 +373,7 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
 10. [tensoflow 安装官网page](https://tensorflow.google.cn/install/)
 11. [tensorflow2.1.0-RC1 源码编译（CPU版本）](https://blog.csdn.net/qq_34347375/article/details/103547553), 按照tensorflow 官网说法，2.1.0是同时支持gpu和cpu的，如只需要cpu，加-cpu
 
-### 2.10.3. download 
+### 2.11.3. download 
 1. [cuda 10.2](https://developer.nvidia.com/cuda-downloads)， 选择runfile 
 2. [cudnn](https://developer.nvidia.com/rdp/cudnn-download), 需要注册账号, use: cuhk， pwd:Sgl; three files: 
    1. cuDNN Runtime Library for Ubuntu18.04 (Deb) 
@@ -350,8 +381,8 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
    3. cuDNN Code Samples and User Guide for Ubuntu18.04 (Deb) 
 3. [pycuda 官网](https://www.lfd.uci.edu/~gohlke/pythonlibs/?cm_mc_uid=08085305845514542921829&cm_mc_sid_50200000=1456395916#pycuda)
 
-### 2.10.4. installation
-#### cuda and nvidia
+### 2.11.4. installation
+#### 2.11.4.1. cuda and nvidia
 * uninstall method: 
 > sudo /usr/local/cuda-10.2/bin/cuda-uninstaller\
 > sudo /usr/bin/nvidia-uninstall
@@ -499,7 +530,7 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
     ```
 
 
-#### cudnn 
+#### 2.11.4.2. cudnn 
 * 如果deb 使用dpkg -i 出现 .deb not a deb file error, 可以直接对deb文件在新得利软件管理中心安装，就是右键deb文件后--> open with software install 
 * 这里使用的是官网写的ubuntu的第二种deb安装方式，不需要拷贝cudnn.h 文件到cuda目录的，所以没办法使用 cat cudnn.h 的方式检查cudnn的版本,但是可以通过
   
@@ -542,7 +573,7 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
     ./mnistCUDNN 
     ```
     
-#### pycuda
+#### 2.11.4.3. pycuda
 * 查看pycuda的对应版本去[pycuda 官网](https://www.lfd.uci.edu/~gohlke/pythonlibs/?cm_mc_uid=08085305845514542921829&cm_mc_sid_50200000=1456395916#pycuda)；
     ```bash
     #查看CUDA版本, 2020-01-08, latest 10.2
@@ -555,7 +586,7 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
     sudo pip install pycuda
     sudo pip3 install pycuda==2019.1.2
     ```
-#### tensorflow-gpu
+#### 2.11.4.4. tensorflow-gpu
 this method install the version can be checked by pip3 search tensorflow-gpu, however, may not suits the cuda version.
 * pre install:
   ```bash
