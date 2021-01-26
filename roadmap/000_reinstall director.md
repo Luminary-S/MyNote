@@ -92,10 +92,12 @@ refer: [ubuntu 18.04 LTS 安装搜狗输入法](https://www.jianshu.com/p/c936a8
 1. you will have a simple and easy to use code IDE
 2. download from the [vs code website](https://code.visualstudio.com/) 
 3. always used plugin:
-    + markdown all in one, markdown preview github style, markdown TOC
-    + code runner, code spell checker, path Intellisense 
-    + beautify, bracket pair colorizer2, indent rainbow, chinese language
-    + pyqt, python,
+    + markdown all in one, markdown preview github style, markdown TOC, markdown shortcuts, markdownlint
+    + code runner, code spell checker, path Intellisense, visual studio intellicode
+    + beautify, bracket pair colorizer2, indent rainbow, chinese language, prettier-code formatter
+    + material icon theme and color theme using dark
+    + pyqt, py-integration(should revise qt installation location in setting), python, python for vscode, qt for python, jupyter
+    + ros
     + latex workshop, latex snippets, latex-formatter
     + [other vs code plugins ]( https://www.jianshu.com/p/068db41b6dcc )
 4. just use ```code ``` in terminal to start it

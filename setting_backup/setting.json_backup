@@ -1,0 +1,238 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "git.autofetch": true,
+    "files.eol": "\n",
+    // "editor.fontLigatures": null,
+    "pyqt-integration.qtdesigner.path": "/home/sgl/Qt/5.15.2/gcc_64/bin/designer",
+    "C_Cpp.updateChannel": "Insiders",
+    "explorer.confirmDelete": false,
+
+    "http.proxySupport": "off",
+    "markdown-toc.depthTo": 3,
+    "window.zoomLevel": 0,
+    "qtForPython.path.designer": "/home/sgl/Qt/5.15.2/gcc_64/bin/designer",
+    "qtForPython.path.pyuic": "/usr/bin/python3 -m PyQt5.uic.pyuic  ",
+    "terminal.integrated.rendererType": "dom",
+    "editor.renderWhitespace": "none",
+    "python.autoComplete.addBrackets": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "files.autoGuessEncoding": true,
+    // "markdown-preview-enhanced.mermaidTheme": "forest",
+    "latex-workshop.bibtex-format.tab": "tab",
+    // "latex-workshop.latex.autoBuild.onSave.enabled": true,"latex-workshop.bibtex-format.tab": "tab",
+    // "latex-workshop.latex.autoBuild.onSave.enabled": true,
+    "latex-workshop.latex.recipes": [
+        {
+          "name": "pdflatex",
+          "tools": [
+              "pdflatex"
+          ]
+          },{
+          "name": "xelatex",
+          "tools": [
+              "xelatex"
+          ]
+          }, {
+          "name": "latexmk",
+          "tools": [
+              "latexmk"
+          ]
+          }, {
+            "name": "xelatex->bibtex->exlatex*2",
+            "tools": [
+              "xelatex",
+              "bibtex",
+              "xelatex",
+              "xelatex"
+            ]
+          },{
+          "name": "pdflatex -> bibtex -> pdflatex*2",
+          "tools": [
+              "pdflatex",
+              "bibtex",
+              "pdflatex",
+              "pdflatex"
+          ]
+          }
+        ],
+        "latex-workshop.latex.tools": [{
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-pdf",
+          "%DOC%"
+        ]
+        }, {
+        "name": "xelatex",
+        "command": "xelatex",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ]
+        }, {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ]
+        }, {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+          "%DOCFILE%"
+        ]
+        }],
+        "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+        ],
+        "cSpell.userWords": [
+          "MRPs",
+          "ZUPT",
+          "beamer",
+          "rcrmsg",
+          "textcolor",
+          "urscript"
+        ],
+        "git.suggestSmartCommit": false,
+        "latex-workshop.view.pdf.external.viewer.command": "zathura",
+        "latex-workshop.view.pdf.external.viewer.args": [
+            "%PDF%"
+        ],
+        "latex-workshop.view.pdf.external.synctex.command": "zathura_forward_search",
+        "latex-workshop.view.pdf.external.synctex.args": [
+            "%PDF%",
+            "%LINE%",
+            "%TEX%"
+        ],
+        // "latex-workshop.latex.autoBuild.run": "onFileChange",
+        // "latex-workshop.latex.outDir": "./tmp",
+        "latex-workshop.view.pdf.viewer": "tab",
+        "workbench.list.automaticKeyboardNavigation": false,
+        // "workbench.iconTheme": "material-icon-theme",
+        "ros.distro": "melodic",
+        // "git.autofetch": true,
+      "C_Cpp.default.systemIncludePath": [],
+      "workbench.settings.editor": "ui",
+      // "latex-workshop.latex.autoBuild.run": "onFileChange",
+
+
+      //matlab
+    //   "files.associations": {
+    //     "*.m": "matlab",
+    //     "*.h": "cpp"
+    //   },
+    // "matlab.matlabpath": "/home/sgl/matlab2018a/matlab",
+    // "matlab.mlintpath": "/home/sgl/matlab2018a/bin/glnxa64/mlint",
+    // "matlab.linterConfig": "/home/sgl/matlab2018a/bin/glnxa64/mlint",
+    "code-runner.executorMap": {
+
+      "javascript": "node",
+      "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+      "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+      "php": "php",
+      "python": "python3 -u",
+      "perl": "perl",
+      "perl6": "perl6",
+      "ruby": "ruby",
+      "go": "go run",
+      "lua": "lua",
+      "groovy": "groovy",
+      "powershell": "powershell -ExecutionPolicy ByPass -File",
+      "bat": "cmd /c",
+      "shellscript": "bash",
+      "fsharp": "fsi",
+      "csharp": "scriptcs",
+      "vbscript": "cscript //Nologo",
+      "typescript": "ts-node",
+      "coffeescript": "coffee",
+      "scala": "scala",
+      "swift": "swift",
+      "julia": "julia",
+      "crystal": "crystal",
+      "ocaml": "ocaml",
+      "r": "Rscript",
+      "applescript": "osascript",
+      "clojure": "lein exec",
+      "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+      "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+      "racket": "racket",
+      "scheme": "csi -script",
+      "ahk": "autohotkey",
+      "autoit": "autoit3",
+      "dart": "dart",
+      "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+      "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+      "haskell": "runhaskell",
+      "nim": "nim compile --verbosity:0 --hints:off --run",
+      "lisp": "sbcl --script",
+      "kit": "kitc --run",
+      "v": "v run",
+      "sass": "sass --style expanded",
+      "scss": "scss --style expanded",
+      "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+      "matlab": "cd $dir && matlab -nosplash -nodesktop -r $fileNameWithoutExt" 
+    },
+    // "matlab-interactive-terminal.pythonPath": "/usr/bin/python3.6",
+    // "python.autoComplete.extraPaths": [
+    
+    
+    // ],
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "typescript.disableAutomaticTypeAcquisition": true,
+    "editor.minimap.enabled": true,
+    "C_Cpp.autocomplete": "Default",
+    "[cpp]": {
+        "editor.quickSuggestions": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.quickSuggestions": true
+    },
+    "cmake.configureOnOpen": true,
+    // "editor.suggestSelection": "first",
+    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "python.languageServer": "Microsoft",
+    "extensions.ignoreRecommendations": false,
+    "scm.alwaysShowRepositories": true,
+    "[latex]": {
+      "editor.defaultFormatter": "nickfode.latex-formatter"
+    },
+    "notebook.kernelProviderAssociations": [
+
+    
+    ],
+    "editor.fontLigatures": false
+
+}
