@@ -41,6 +41,11 @@ git pull
 ``` 
 git push origin master 
 ```
+6. **fast git clone, in https link**
+```bash
+git clone https://github.com.cnpmjs.org/Luminary-S/MyNote.git
+```
+
 # 2. git-ssh 配置
 refer: https://segmentfault.com/a/1190000002645623
 1. 设置Git的user name和email：
