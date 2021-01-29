@@ -32,6 +32,7 @@ Ubuntu 18.04 in Windows 10 two systems
     - [2.11.4. installation](#2114-installation)
       - [2.11.4.1. cuda and nvidia](#21141-cuda-and-nvidia)
       - [2.11.4.2. cudnn](#21142-cudnn)
+      - [gcc 5.5.0 install](#gcc-550-install)
       - [2.11.4.3. pycuda](#21143-pycuda)
       - [2.11.4.4. tensorflow-gpu](#21144-tensorflow-gpu)
 - [3. unnecessary software install](#3-unnecessary-software-install)
@@ -574,7 +575,14 @@ NOTE:  CUDA 10.2 自带 NVIDIA driver，所以不需要自己去安装nvidia 驱
     #运行示例，如果成功则证明安装成功。 
     ./mnistCUDNN 
     ```
-    
+#### gcc 5.5.0 install
+1. choose to install in folder `/usr/local/gcc-5.5.0` mkdir first
+2. self download from [Asia-China USTC mirror of GNU software](https://mirrors.ustc.edu.cn/gnu/), some prerequisites should be downloaded and installed, if not found in pre USTC link, download from `ftp://gcc.gnu.org/pub/gcc/infrastructure/`
+3. install steps should refer to 
+[unsupported GNU version! gcc versions later than 6 are not supported!](https://blog.csdn.net/littlehaes/article/details/103372007) and 
+[Ubuntu 18.04.1 安装低版本GCC](https://www.jianshu.com/p/0caef3ce8e06)
+
+
 #### 2.11.4.3. pycuda
 * 查看pycuda的对应版本去[pycuda 官网](https://www.lfd.uci.edu/~gohlke/pythonlibs/?cm_mc_uid=08085305845514542921829&cm_mc_sid_50200000=1456395916#pycuda)；
     ```bash
