@@ -113,7 +113,14 @@ NOTE: if TOC not automatically changes line, set EOL to \r\n in setting
    1. lastpass
    2. grammarly
 4. **mendeley**: ```sudo apt-get install mendeleydesktop ``` or download from website [mendeley](https://www.mendeley.com/repositories/ubuntu/stable/amd64/mendeleydesktop-latest)
-5. **FoxitReader**
+5. **VLC** media and **openshot** video editor and **Audacity** audio editor
+   1. openshot
+   ```
+    sudo add-apt-repository ppa:jonoomph/openshot-edge
+    sudo apt-get update
+    sudo apt-get install openshot openshot-doc
+   ```
+6. **FoxitReader**
    1. download [FoxitReader](https://www.foxitsoftware.cn/pdf-reader/)
    2. install:
    ```bash
@@ -122,10 +129,10 @@ NOTE: if TOC not automatically changes line, set EOL to \r\n in setting
    sudo ./FoxitReader.enu.setup.2.1.0805\(r225432\).x64.run
    # path : /opt/foxitsoftware/foxitreader
    ```
-6. rtorrent torrent download: ```sudo apt install rtorrent```
-7. Indicator Stickynotes (desktop stickynotes)
-8. [Xmind8](https://www.xmind.cn/download/xmind8/) and [install crack tutorial](https://www.jianshu.com/p/9d93b1754549)
-9. 词典goldendict, `sudo apt-get install goldendict`, add off-line dict files:[dict website](http://download.huzheng.org/zh_CN/); [reference](https://blog.csdn.net/clksjx/article/details/85052248); youdao dict online website: http://dict.youdao.com/search?q=%GDWORD%&ue=utf8&keyfrom=web.index
+7. rtorrent torrent download: ```sudo apt install rtorrent```
+8. Indicator Stickynotes (desktop stickynotes)
+9.  [Xmind8](https://www.xmind.cn/download/xmind8/) and [install crack tutorial](https://www.jianshu.com/p/9d93b1754549)
+10. 词典goldendict, `sudo apt-get install goldendict`, add off-line dict files:[dict website](http://download.huzheng.org/zh_CN/); [reference](https://blog.csdn.net/clksjx/article/details/85052248); youdao dict online website: http://dict.youdao.com/search?q=%GDWORD%&ue=utf8&keyfrom=web.index
 
 ## 2.6. **ROS**
 ubuntu 18.04 --> melodic; ubuntu 16.04--> kinetic
