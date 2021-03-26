@@ -1,0 +1,4 @@
+StockCode,Name,open_price,last_close_price,profit_rate,avr_price,support_price,resistance_price,peak_price,oc_rate
+BABA,alibaba,222.17,222.72,0.1128,250,221.2,253.6,319.32,0.0323
+BILI,biilibili,,,,,,,,
+PDD,pinduoduo,130.08,127.53,0.1277,155,110.2,161.6,212.597,0.0577
