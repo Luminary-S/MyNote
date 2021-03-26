@@ -17,6 +17,24 @@ class StockInfo:
         self.cost_per_day_one = self.s_user_pp['cost_per_day_one']
         self.s_cost = 200 + 100 # time cost + transaction fee 
 
+    def reader(self, fname):
+        f = open('values.csv', 'r')
+
+        with f:
+
+            reader = csv.DictReader(f)
+
+        for row in reader:
+            print(row['min'], row['avg'], row['max'])
+
+    def writer(self, fname):
+        f = open('numbers2.csv', 'w')
+
+        with f:
+            writer = csv.writer(f)
+
+        for row in nms:
+            writer.writerow(row) 
 
 class StockAdvice:
 
