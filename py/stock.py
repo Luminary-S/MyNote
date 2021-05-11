@@ -27,7 +27,7 @@ class StockInfo:
         for row in reader:
             print(row['min'], row['avg'], row['max'])
 
-    def writer(self, fname):
+    def writer(self, fname, nms):
         f = open('numbers2.csv', 'w')
 
         with f:

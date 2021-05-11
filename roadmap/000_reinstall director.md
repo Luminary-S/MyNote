@@ -734,6 +734,9 @@ sudo apt-get install texlive-xetex
 # 安装publisher
 sudo apt-get install texlive-publishers
 
+# 安装biblatex
+sudo apt-get install texlive-bibtex-extra
+
 # install beamer.cls
 sudo apt install texlive-latex-recommended
 ```
