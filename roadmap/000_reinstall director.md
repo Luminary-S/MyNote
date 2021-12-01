@@ -661,7 +661,7 @@ START
         cd /mnt
         sudo rmdir iso
     ```
-
+8. vscode matlab: https://blog.csdn.net/weixin_42815609/article/details/103830253
 ## 3.2. **PyQt5, python3 pycharm**
 1. refer : https://www.jianshu.com/p/094928ac0b73
 2. python doc 查看所有的 安装包
@@ -736,6 +736,9 @@ sudo apt-get install texlive-publishers
 
 # 安装biblatex
 sudo apt-get install texlive-bibtex-extra
+
+# 安装 texlive science
+ sudo apt-get install texlive-science
 
 # install beamer.cls
 sudo apt install texlive-latex-recommended
